@@ -1,7 +1,0 @@
-Index Scan using idx_entities_geom on entities  (cost=0.41..20.93 rows=1 width=7) (actual time=0.453..0.453 rows=0 loops=1)
-  Index Cond: (geom && _st_expand('0101000020E610000000000000000024400000000000004940'::geography, '2000'::double precision))
-  Filter: ((merged_into IS NULL) AND (deleted_at IS NULL) AND (observed_at >= '2025-01-31 00:00:00+00'::timestamp with time zone) AND (observed_at <= '2025-03-02 00:00:00+00'::timestamp with time zone) AND ((type)::text = 'Transaction'::text) AND st_dwithin(geom, '0101000020E610000000000000000024400000000000004940'::geography, '2000'::double precision, true))
-  Rows Removed by Filter: 2
-  Buffers: shared hit=63 read=24
-Planning Time: 0.465 ms
-Execution Time: 0.469 ms
