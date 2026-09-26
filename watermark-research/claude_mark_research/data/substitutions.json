@@ -1,0 +1,515 @@
+{
+  "_meta": {
+    "name": "claude-mark-research static substitution dictionary",
+    "version": "1.0.0",
+    "description": "Hand-written static synonym table. No model was used to build or select entries. Keys are lowercase surface forms; inflected forms are listed explicitly instead of generated.",
+    "tiers": {
+      "conservative": "near-synonyms that rarely change register or meaning",
+      "extended": "broader substitutions used only by stronger pipelines; higher risk of meaning drift"
+    },
+    "notes": "Entries with noun/verb ambiguity that produced ungrammatical output in review were removed. Irregular preterite alternatives are skipped after auxiliaries (has/have/had/been)."
+  },
+  "substitutions": {
+    "approximately": [
+      "about",
+      "roughly"
+    ],
+    "demonstrate": [
+      "show"
+    ],
+    "demonstrates": [
+      "shows"
+    ],
+    "demonstrated": [
+      "showed"
+    ],
+    "demonstrating": [
+      "showing"
+    ],
+    "utilize": [
+      "use"
+    ],
+    "utilizes": [
+      "uses"
+    ],
+    "utilized": [
+      "used"
+    ],
+    "utilizing": [
+      "using"
+    ],
+    "utilise": [
+      "use"
+    ],
+    "utilises": [
+      "uses"
+    ],
+    "utilised": [
+      "used"
+    ],
+    "utilising": [
+      "using"
+    ],
+    "utilization": [
+      "use"
+    ],
+    "subsequently": [
+      "later",
+      "afterwards"
+    ],
+    "therefore": [
+      "thus",
+      "hence"
+    ],
+    "however": [
+      "nevertheless"
+    ],
+    "additionally": [
+      "also",
+      "moreover"
+    ],
+    "furthermore": [
+      "moreover",
+      "also"
+    ],
+    "numerous": [
+      "many"
+    ],
+    "sufficient": [
+      "enough"
+    ],
+    "commence": [
+      "begin",
+      "start"
+    ],
+    "commences": [
+      "begins",
+      "starts"
+    ],
+    "terminate": [
+      "end"
+    ],
+    "terminates": [
+      "ends"
+    ],
+    "terminated": [
+      "ended"
+    ],
+    "facilitate": [
+      "help",
+      "ease"
+    ],
+    "facilitates": [
+      "helps",
+      "eases"
+    ],
+    "facilitated": [
+      "helped",
+      "eased"
+    ],
+    "obtain": [
+      "get",
+      "acquire"
+    ],
+    "obtains": [
+      "gets",
+      "acquires"
+    ],
+    "obtained": [
+      "acquired"
+    ],
+    "assist": [
+      "help"
+    ],
+    "assists": [
+      "helps"
+    ],
+    "assisted": [
+      "helped"
+    ],
+    "purchase": [
+      "buy"
+    ],
+    "purchased": [
+      "bought"
+    ],
+    "attempt": [
+      "try"
+    ],
+    "attempts": [
+      "tries"
+    ],
+    "attempted": [
+      "tried"
+    ],
+    "require": [
+      "need"
+    ],
+    "requires": [
+      "needs"
+    ],
+    "required": [
+      "needed"
+    ],
+    "additional": [
+      "extra",
+      "further"
+    ],
+    "frequently": [
+      "often"
+    ],
+    "occasionally": [
+      "sometimes"
+    ],
+    "rapidly": [
+      "quickly"
+    ],
+    "individuals": [
+      "people"
+    ],
+    "modify": [
+      "change",
+      "alter"
+    ],
+    "modifies": [
+      "changes",
+      "alters"
+    ],
+    "modified": [
+      "changed",
+      "altered"
+    ],
+    "indicate": [
+      "show",
+      "suggest"
+    ],
+    "indicates": [
+      "shows",
+      "suggests"
+    ],
+    "indicated": [
+      "showed",
+      "suggested"
+    ],
+    "initial": [
+      "first"
+    ],
+    "initially": [
+      "at first"
+    ],
+    "primary": [
+      "main",
+      "chief"
+    ],
+    "significant": [
+      "notable",
+      "important"
+    ],
+    "significantly": [
+      "notably",
+      "markedly"
+    ],
+    "evaluate": [
+      "assess"
+    ],
+    "evaluates": [
+      "assesses"
+    ],
+    "evaluated": [
+      "assessed"
+    ],
+    "evaluating": [
+      "assessing"
+    ],
+    "examine": [
+      "inspect",
+      "study"
+    ],
+    "examines": [
+      "inspects",
+      "studies"
+    ],
+    "examined": [
+      "inspected",
+      "studied"
+    ],
+    "ensure": [
+      "make sure"
+    ],
+    "consequently": [
+      "as a result"
+    ],
+    "nevertheless": [
+      "still",
+      "even so"
+    ],
+    "regarding": [
+      "about",
+      "concerning"
+    ],
+    "objective": [
+      "goal",
+      "aim"
+    ],
+    "objectives": [
+      "goals",
+      "aims"
+    ],
+    "component": [
+      "part",
+      "element"
+    ],
+    "components": [
+      "parts",
+      "elements"
+    ],
+    "enable": [
+      "allow",
+      "let"
+    ],
+    "enables": [
+      "allows",
+      "lets"
+    ],
+    "enabled": [
+      "allowed"
+    ],
+    "construct": [
+      "build"
+    ],
+    "constructs": [
+      "builds"
+    ],
+    "constructed": [
+      "built"
+    ],
+    "provide": [
+      "give",
+      "supply"
+    ],
+    "provides": [
+      "gives",
+      "supplies"
+    ],
+    "identify": [
+      "find",
+      "spot"
+    ],
+    "identifies": [
+      "finds",
+      "spots"
+    ],
+    "identified": [
+      "found",
+      "spotted"
+    ],
+    "method": [
+      "approach",
+      "technique"
+    ],
+    "methods": [
+      "approaches",
+      "techniques"
+    ],
+    "large": [
+      "big",
+      "sizable"
+    ],
+    "important": [
+      "key",
+      "crucial"
+    ],
+    "often": [
+      "frequently"
+    ],
+    "quickly": [
+      "rapidly",
+      "swiftly"
+    ],
+    "various": [
+      "several",
+      "different"
+    ],
+    "typically": [
+      "usually",
+      "generally"
+    ],
+    "commonly": [
+      "often",
+      "usually"
+    ],
+    "difficult": [
+      "hard",
+      "tough"
+    ],
+    "simple": [
+      "plain",
+      "basic"
+    ],
+    "entire": [
+      "whole"
+    ],
+    "accurate": [
+      "precise",
+      "correct"
+    ]
+  },
+  "extended": {
+    "result": [
+      "outcome"
+    ],
+    "study": [
+      "analysis"
+    ],
+    "studies": [
+      "analyses"
+    ],
+    "data": [
+      "information"
+    ],
+    "show": [
+      "reveal"
+    ],
+    "shows": [
+      "reveals"
+    ],
+    "showed": [
+      "revealed"
+    ],
+    "help": [
+      "aid"
+    ],
+    "helps": [
+      "aids"
+    ],
+    "many": [
+      "numerous",
+      "a lot of"
+    ],
+    "good": [
+      "fine",
+      "solid"
+    ],
+    "bad": [
+      "poor"
+    ],
+    "new": [
+      "novel",
+      "fresh"
+    ],
+    "problem": [
+      "issue",
+      "difficulty"
+    ],
+    "problems": [
+      "issues",
+      "difficulties"
+    ],
+    "change": [
+      "shift",
+      "alteration"
+    ],
+    "changes": [
+      "shifts",
+      "alterations"
+    ],
+    "way": [
+      "manner",
+      "means"
+    ],
+    "ways": [
+      "means",
+      "manners"
+    ],
+    "part": [
+      "portion",
+      "piece"
+    ],
+    "parts": [
+      "portions",
+      "pieces"
+    ],
+    "main": [
+      "principal",
+      "central"
+    ],
+    "start": [
+      "begin"
+    ],
+    "starts": [
+      "begins"
+    ],
+    "find": [
+      "discover",
+      "locate"
+    ],
+    "finds": [
+      "discovers",
+      "locates"
+    ],
+    "big": [
+      "large"
+    ],
+    "fast": [
+      "quick",
+      "rapid"
+    ],
+    "whole": [
+      "entire"
+    ],
+    "very": [
+      "highly",
+      "extremely"
+    ],
+    "usually": [
+      "typically",
+      "normally"
+    ],
+    "because": [
+      "since",
+      "as"
+    ],
+    "about": [
+      "around"
+    ],
+    "get": [
+      "obtain"
+    ],
+    "gets": [
+      "obtains"
+    ],
+    "build": [
+      "construct"
+    ],
+    "builds": [
+      "constructs"
+    ],
+    "test": [
+      "check",
+      "trial"
+    ],
+    "tests": [
+      "checks",
+      "trials"
+    ],
+    "idea": [
+      "notion",
+      "concept"
+    ],
+    "ideas": [
+      "notions",
+      "concepts"
+    ],
+    "goal": [
+      "aim",
+      "objective"
+    ],
+    "goals": [
+      "aims",
+      "objectives"
+    ],
+    "employ": [
+      "use"
+    ]
+  }
+}
