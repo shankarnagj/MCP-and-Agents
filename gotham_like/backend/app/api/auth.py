@@ -25,7 +25,7 @@ users_router = APIRouter(prefix="/api/users", tags=["users"])
 
 MAX_FAILED = 5
 LOCKOUT = timedelta(minutes=15)
-_DUMMY_HASH = hash_password("timing-equaliser-not-a-real-password", rounds=4)
+_DUMMY_HASH = hash_password("timing-equaliser-not-a-real-password", rounds=4)  # noqa: S105 - never matches a login
 
 
 class LoginRequest(BaseModel):
@@ -35,7 +35,7 @@ class LoginRequest(BaseModel):
 
 class LoginResponse(BaseModel):
     access_token: str
-    token_type: str = "bearer"
+    token_type: str = "bearer"  # noqa: S105 - OAuth token type, not a secret
     expires_in: int
     user: dict
 

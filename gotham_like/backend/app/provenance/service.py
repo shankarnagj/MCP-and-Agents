@@ -71,10 +71,10 @@ def lineage_graph(db: Session, kind: str, obj_id: str, direction: str = "up", ma
         k, i = queue.popleft()
         if direction == "up":
             links = db.scalars(select(LineageLink).where(LineageLink.child_kind == k, LineageLink.child_id == i).limit(200)).all()
-            nxt = [(l.parent_kind, l.parent_id, l) for l in links]
+            nxt = [(lk.parent_kind, lk.parent_id, lk) for lk in links]
         else:
             links = db.scalars(select(LineageLink).where(LineageLink.parent_kind == k, LineageLink.parent_id == i).limit(200)).all()
-            nxt = [(l.child_kind, l.child_id, l) for l in links]
+            nxt = [(lk.child_kind, lk.child_id, lk) for lk in links]
         for nk, ni, link in nxt:
             edges.append({"from": f"{link.parent_kind}:{link.parent_id}", "to": f"{link.child_kind}:{link.child_id}",
                           "transformation": link.transformation, "transformation_version": link.transformation_version,

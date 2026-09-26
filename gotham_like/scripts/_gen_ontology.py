@@ -77,7 +77,7 @@ relationship_types = {
 onto = {
   "version": "1.0.0",
   "name": "tessera-core",
-  "description": "Configurable core ontology. Edit this file (or POST /api/ontology as ADMIN) to extend.",
+  "description": "Configurable core ontology. Edit this file (or PUT /api/ontology as ADMIN) to extend.",
   "sensitivity_levels": {"public": "Visible to all roles", "pii": "Personal data: masked for VIEWER", "restricted": "Highly sensitive: ADMIN/INVESTIGATOR only"},
   "entity_types": entity_types,
   "relationship_types": relationship_types,

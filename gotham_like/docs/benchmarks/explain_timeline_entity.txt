@@ -1,0 +1,18 @@
+Limit  (cost=130.88..130.96 rows=33 width=475) (actual time=0.111..0.115 rows=29 loops=1)
+  Buffers: shared hit=32
+  ->  Sort  (cost=130.88..130.96 rows=33 width=475) (actual time=0.110..0.112 rows=29 loops=1)
+        Sort Key: "timestamp"
+        Sort Method: quicksort  Memory: 32kB
+        Buffers: shared hit=32
+        ->  Bitmap Heap Scan on events  (cost=13.01..130.04 rows=33 width=475) (actual time=0.021..0.072 rows=29 loops=1)
+              Recheck Cond: (entity_ids && '{b41500}'::character varying[])
+              Filter: (deleted_at IS NULL)
+              Heap Blocks: exact=29
+              Buffers: shared hit=32
+              ->  Bitmap Index Scan on ix_events_entity_ids  (cost=0.00..13.00 rows=33 width=0) (actual time=0.013..0.013 rows=29 loops=1)
+                    Index Cond: (entity_ids && '{b41500}'::character varying[])
+                    Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=1
+Planning Time: 0.109 ms
+Execution Time: 0.134 ms

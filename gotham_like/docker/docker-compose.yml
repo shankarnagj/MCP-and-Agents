@@ -1,0 +1,42 @@
+# Local-first deployment. Secrets MUST be provided via environment / .env (see docs/SETUP.md).
+name: tessera
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: tessera
+      POSTGRES_PASSWORD: ${TESSERA_DB_PASSWORD:?set TESSERA_DB_PASSWORD}
+      POSTGRES_DB: tessera
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U tessera"], interval: 5s, retries: 20 }
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+  backend:
+    build: { context: .., dockerfile: docker/backend.Dockerfile }
+    environment:
+      TESSERA_ENV: ${TESSERA_ENV:-development}
+      TESSERA_DATABASE_URL: postgresql+psycopg://tessera:${TESSERA_DB_PASSWORD}@db:5432/tessera
+      TESSERA_REDIS_URL: redis://redis:6379/0
+      TESSERA_SECRET_KEY: ${TESSERA_SECRET_KEY:?set TESSERA_SECRET_KEY}
+      TESSERA_ENCRYPTION_KEY: ${TESSERA_ENCRYPTION_KEY:?set TESSERA_ENCRYPTION_KEY}
+      TESSERA_CORS_ORIGINS: '["http://localhost:8080"]'
+      TESSERA_DEMO_PASSWORD: ${TESSERA_DEMO_PASSWORD:-}
+    depends_on: { db: { condition: service_healthy }, redis: { condition: service_started } }
+  seed:
+    build: { context: .., dockerfile: docker/backend.Dockerfile }
+    profiles: ["seed"]
+    environment:
+      TESSERA_DATABASE_URL: postgresql+psycopg://tessera:${TESSERA_DB_PASSWORD}@db:5432/tessera
+      TESSERA_REDIS_URL: redis://redis:6379/0
+      TESSERA_SECRET_KEY: ${TESSERA_SECRET_KEY}
+      TESSERA_ENCRYPTION_KEY: ${TESSERA_ENCRYPTION_KEY}
+      TESSERA_DEMO_PASSWORD: ${TESSERA_DEMO_PASSWORD:?set TESSERA_DEMO_PASSWORD for seeded demo users}
+    command: ["python", "/srv/scripts/seed_demo.py"]
+    depends_on: { db: { condition: service_healthy } }
+  frontend:
+    build: { context: .., dockerfile: docker/frontend.Dockerfile }
+    ports: ["127.0.0.1:8080:8080"]
+    depends_on: [backend]
+volumes:
+  pgdata: {}

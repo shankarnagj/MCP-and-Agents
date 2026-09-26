@@ -80,7 +80,7 @@ class RecordMapping(BaseModel):
 
 def entity_id(entity_type: str, natural_key: str) -> str:
     """Deterministic id: identical natural keys from different sources converge."""
-    digest = hashlib.sha1(f"{entity_type}|{natural_key}".encode()).hexdigest()[:20]
+    digest = hashlib.sha1(f"{entity_type}|{natural_key}".encode(), usedforsecurity=False).hexdigest()[:20]
     return f"{entity_type.lower()[:4]}_{digest}"
 
 
@@ -244,7 +244,7 @@ def apply_mapping(ontology: Ontology, mapping: RecordMapping, source_record_key:
         except ValueError as exc:
             out.errors.append(str(exc))
             continue
-        rid = "rel_" + hashlib.sha1(f"{rs.type}|{s}|{t}|{source_record_key}|{i}".encode()).hexdigest()[:20]
+        rid = "rel_" + hashlib.sha1(f"{rs.type}|{s}|{t}|{source_record_key}|{i}".encode(), usedforsecurity=False).hexdigest()[:20]
         out.relationships.append(
             NormRelationship(
                 id=rid, type=rs.type, source_id=s, target_id=t,
@@ -270,7 +270,7 @@ def apply_mapping(ontology: Ontology, mapping: RecordMapping, source_record_key:
                 lat, lon = loc.lat, loc.lon
         out.events.append(
             NormEvent(
-                id="evt_" + hashlib.sha1(f"{source_record_key}|{i}".encode()).hexdigest()[:20],
+                id="evt_" + hashlib.sha1(f"{source_record_key}|{i}".encode(), usedforsecurity=False).hexdigest()[:20],
                 event_type=str(etype), timestamp=ts,
                 start_time=parse_ts(row.get(ev.start_time)) if ev.start_time else None,
                 end_time=parse_ts(row.get(ev.end_time)) if ev.end_time else None,

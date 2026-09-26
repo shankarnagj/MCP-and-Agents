@@ -131,7 +131,10 @@ def review_candidate(cand_id: str, body: ReviewBody, request: Request, user: Pri
         result = merge_entities(db, canon, dup, match, actor=user.username)
     elif body.decision == "REJECT" and c.merged:
         dup = c.entity_a if db.get(Entity, c.entity_a).merged_into else c.entity_b
-        result = unmerge(db, dup, user.username)
+        try:
+            result = unmerge(db, dup, user.username)
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
     c.review_status = "CONFIRMED" if body.decision == "CONFIRM" else "REJECTED"
     c.reviewed_by = user.username
     record(db, "er_review", user, "resolution_candidate", c.id, previous_value=before,

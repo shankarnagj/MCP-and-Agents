@@ -13,7 +13,7 @@ from app.entity_resolution import normalize as N
 from app.models import Entity, EntityIdentifier
 from app.ontology import Ontology
 from app.privacy.masking import can_view
-from app.search.parser import ParsedQuery, QueryParseError, parse
+from app.search.parser import QueryParseError, parse
 from app.services.serialize import entity_dict
 
 FUZZY_THRESHOLD = 0.45

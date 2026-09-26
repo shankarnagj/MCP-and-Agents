@@ -25,9 +25,44 @@ def point(lat: float, lon: float):  # noqa: ANN201
     return cast(func.ST_SetSRID(func.ST_MakePoint(lon, lat), 4326), Geography)
 
 
-def geojson_geography(geometry: dict[str, Any]):  # noqa: ANN201
+_DEPTH = {"Point": 0, "MultiPoint": 1, "LineString": 1, "MultiLineString": 2, "Polygon": 2, "MultiPolygon": 3}
+MAX_POSITIONS = 20_000
+
+
+def validate_geojson(geometry: Any) -> None:
+    """Structural validation before anything reaches PostGIS."""
     if not isinstance(geometry, dict) or geometry.get("type") not in ALLOWED_GEOJSON:
         raise ValueError(f"geometry type must be one of {sorted(ALLOWED_GEOJSON)}")
+    count = 0
+
+    def walk(node: Any, depth: int) -> None:
+        nonlocal count
+        if depth == 0:
+            if not (isinstance(node, list) and len(node) in (2, 3) and all(isinstance(x, int | float) and not isinstance(x, bool) for x in node)):
+                raise ValueError("invalid position: expected [lon, lat]")
+            lon, lat = node[0], node[1]
+            if not (-180 <= lon <= 180 and -90 <= lat <= 90):
+                raise ValueError("position out of range")
+            count += 1
+            if count > MAX_POSITIONS:
+                raise ValueError("geometry has too many positions")
+            return
+        if not isinstance(node, list) or not node:
+            raise ValueError("invalid coordinates nesting")
+        for child in node:
+            walk(child, depth - 1)
+
+    walk(geometry.get("coordinates"), _DEPTH[geometry["type"]])
+    if geometry["type"] in ("Polygon", "MultiPolygon"):
+        rings = [geometry["coordinates"]] if geometry["type"] == "Polygon" else geometry["coordinates"]
+        for poly in rings:
+            for ring in poly:
+                if len(ring) < 4 or ring[0] != ring[-1]:
+                    raise ValueError("polygon rings must be closed with at least 4 positions")
+
+
+def geojson_geography(geometry: dict[str, Any]):  # noqa: ANN201
+    validate_geojson(geometry)
     text = json.dumps(geometry)
     if len(text) > 200_000:
         raise ValueError("geometry too large")
@@ -122,11 +157,9 @@ def nearest(db: Session, ontology: Ontology, role: str, lat: float, lon: float, 
 
 
 def create_geofence(db: Session, name: str, geometry: dict[str, Any], created_by: str, properties: dict | None = None) -> Geofence:
-    if geometry.get("type") != "Polygon":
+    if not isinstance(geometry, dict) or geometry.get("type") != "Polygon":
         raise ValueError("geofence must be a GeoJSON Polygon")
-    ring = geometry.get("coordinates", [[]])[0]
-    if len(ring) < 4 or ring[0] != ring[-1]:
-        raise ValueError("polygon ring must be closed and have at least 4 positions")
+    validate_geojson(geometry)
     valid = db.scalar(select(func.ST_IsValid(func.ST_SetSRID(func.ST_GeomFromGeoJSON(json.dumps(geometry)), 4326))))
     if not valid:
         raise ValueError("polygon is not valid (self-intersecting?)")

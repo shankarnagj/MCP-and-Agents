@@ -9,7 +9,7 @@ from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db import Base
-from app.models.common import AlertStatus, AssertionStatus, EpistemicStatus, SIGNAL_LABEL, utcnow
+from app.models.common import SIGNAL_LABEL, AlertStatus, AssertionStatus, EpistemicStatus, utcnow
 
 TS = DateTime(timezone=True)
 

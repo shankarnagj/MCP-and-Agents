@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { font-size: 12px; -webkit-font-smoothing: antialiased; overflow: hidden; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #2f3a4b; border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+.maplibregl-popup-content { background: #141922 !important; color: #e3e8ef; font-size: 11px; padding: 6px 8px !important; border: 1px solid #2f3a4b; }
+.maplibregl-popup-tip { display: none; }
+.maplibregl-ctrl-group { background: #19202b !important; }
+.maplibregl-ctrl-group button span { filter: invert(0.85); }
+input, select, textarea { color-scheme: dark; }

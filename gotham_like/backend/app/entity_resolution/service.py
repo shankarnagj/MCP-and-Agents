@@ -41,7 +41,7 @@ class ResolutionStats:
 
 
 def _pair_id(a: str, b: str) -> str:
-    return "res_" + hashlib.sha1(f"{a}|{b}".encode()).hexdigest()[:20]
+    return "res_" + hashlib.sha1(f"{a}|{b}".encode(), usedforsecurity=False).hexdigest()[:20]
 
 
 def active_entities(entity_type: str):  # noqa: ANN201
@@ -188,13 +188,19 @@ def unmerge(db: Session, dup_id: str, actor: str) -> dict:
     if dup is None or dup.merged_into is None:
         raise ValueError("entity is not merged")
     canon = db.get(Entity, dup.merged_into)
-    link = db.scalars(
+    # Merges are undone in reverse order: restoring the canonical's pre-merge snapshot is only
+    # correct for the most recent merge that is still in effect.
+    active = db.scalars(
         select(LineageLink)
-        .where(LineageLink.child_id == canon.id, LineageLink.parent_id == dup.id, LineageLink.transformation == "entity_resolution.merge")
+        .join(Entity, Entity.id == LineageLink.parent_id)
+        .where(LineageLink.child_id == canon.id, LineageLink.transformation == "entity_resolution.merge", Entity.merged_into == canon.id)
         .order_by(LineageLink.id.desc())
-    ).first()
+    ).all()
+    link = next((lk for lk in active if lk.parent_id == dup.id), None)
     if link is None:
         raise ValueError("merge lineage not found")
+    if active[0].parent_id != dup.id:
+        raise ValueError(f"unmerge {active[0].parent_id} first (merges are reversed newest-first)")
     d = link.details
     if d.get("moved_relationships_source"):
         db.execute(update(Relationship).where(Relationship.id.in_(d["moved_relationships_source"])).values(source_id=dup.id))

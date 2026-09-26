@@ -77,7 +77,7 @@ class IngestionResult:
 
 
 def source_record_pk(source_id: str, source_record_id: str) -> str:
-    return "src_" + hashlib.sha1(f"{source_id}|{source_record_id}".encode()).hexdigest()[:20]
+    return "src_" + hashlib.sha1(f"{source_id}|{source_record_id}".encode(), usedforsecurity=False).hexdigest()[:20]
 
 
 def ensure_source(db: Session, source_id: str, name: str, kind: str, description: str = "", classification: str = "UNCLASSIFIED", config: dict | None = None) -> DataSource:

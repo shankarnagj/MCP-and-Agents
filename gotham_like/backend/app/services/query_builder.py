@@ -80,7 +80,7 @@ class PatternQuery(BaseModel):
     limit: int = Field(default=100, ge=1, le=1000)
 
     @model_validator(mode="after")
-    def _refs(self) -> "PatternQuery":
+    def _refs(self) -> PatternQuery:
         names = [n.var for n in self.nodes]
         if len(set(names)) != len(names):
             raise ValueError("duplicate node var")

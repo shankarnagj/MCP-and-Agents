@@ -33,7 +33,7 @@ class EntityTypeDef(BaseModel):
     properties: dict[str, PropertyDef]
 
     @model_validator(mode="after")
-    def _label_exists(self) -> "EntityTypeDef":
+    def _label_exists(self) -> EntityTypeDef:
         if self.label not in self.properties:
             raise ValueError(f"label property '{self.label}' not declared")
         return self
@@ -64,7 +64,7 @@ class Ontology(BaseModel):
         return v
 
     @model_validator(mode="after")
-    def _relationship_endpoints_exist(self) -> "Ontology":
+    def _relationship_endpoints_exist(self) -> Ontology:
         for rname, rdef in self.relationship_types.items():
             for t in rdef.source_types + rdef.target_types:
                 if t != "*" and t not in self.entity_types:

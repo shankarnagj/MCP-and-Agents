@@ -16,9 +16,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 ROOT_DIR = Path(__file__).resolve().parents[2]  # gotham_like/
 DATA_DIR = ROOT_DIR / "data"
 
-_DEV_SECRET = "dev-only-insecure-secret-change-me-0123456789abcdef"
+_DEV_SECRET = "dev-only-insecure-secret-change-me-0123456789abcdef"  # noqa: S105 - rejected when env=production
 # Fernet key (urlsafe base64 of 32 bytes). Development only.
-_DEV_ENC_KEY = "ZGV2LW9ubHktZW5jcnlwdGlvbi1rZXktMzJieXRlcyE="
+_DEV_ENC_KEY = "ZGV2LW9ubHktZW5jcnlwdGlvbi1rZXktMzJieXRlcyE="  # noqa: S105 - rejected when env=production
 
 
 class Settings(BaseSettings):
@@ -58,7 +58,7 @@ class Settings(BaseSettings):
     log_json: bool = True
 
     @model_validator(mode="after")
-    def _reject_dev_secrets_in_prod(self) -> "Settings":
+    def _reject_dev_secrets_in_prod(self) -> Settings:
         if self.env == "production":
             if self.secret_key == _DEV_SECRET or self.encryption_key == _DEV_ENC_KEY:
                 raise ValueError("Development secrets must not be used in production")

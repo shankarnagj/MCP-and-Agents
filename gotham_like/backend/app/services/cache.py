@@ -86,7 +86,7 @@ class Cache:
                 self._local.popitem(last=False)
         if self._redis is not None:
             try:
-                self._redis.setex(key, ttl, blob)
+                self._redis.set(key, blob, ex=ttl)
             except Exception:  # noqa: BLE001
                 pass
         return json.loads(blob)

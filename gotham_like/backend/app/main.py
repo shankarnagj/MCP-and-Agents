@@ -16,8 +16,8 @@ from starlette.middleware.base import BaseHTTPMiddleware
 
 from app.api import auth, entities, governance, graph, spatiotemporal, workspace
 from app.auth.deps import require
-from app.auth.rbac import P_AUDIT
 from app.auth.ratelimit import get_limiter
+from app.auth.rbac import P_AUDIT
 from app.config import get_settings
 from app.db import SessionLocal
 from app.observability import RECENT_ERRORS, RequestContextMiddleware, configure_logging, metrics_payload
@@ -46,6 +46,14 @@ class SecurityMiddleware(BaseHTTPMiddleware):
             length = request.headers.get("content-length")
             if length and length.isdigit() and int(length) > MAX_BODY_BYTES:
                 return JSONResponse({"detail": "request body too large"}, status_code=413)
+            # NUL characters are never valid in this API (and PostgreSQL text rejects them)
+            raw_target = request.scope.get("raw_path", b"") + b"?" + request.scope.get("query_string", b"")
+            if b"%00" in raw_target or b"\x00" in raw_target:
+                return JSONResponse({"detail": "NUL characters are not allowed"}, status_code=422)
+            if request.method in ("POST", "PUT", "PATCH") and "json" in request.headers.get("content-type", ""):
+                body = await request.body()
+                if b"\\u0000" in body or b"\x00" in body:
+                    return JSONResponse({"detail": "NUL characters are not allowed"}, status_code=422)
             ip = request.client.host if request.client else "unknown"
             ok, remaining = get_limiter().hit(f"api:{ip}", get_settings().rate_limit_per_minute)
             if not ok:
