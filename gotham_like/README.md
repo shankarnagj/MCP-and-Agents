@@ -44,12 +44,15 @@ docker compose up -d --build db redis backend frontend && docker compose --profi
 # → http://localhost:8080  (investigator / Demo-Passw0rd!)
 ```
 
-Local development without Docker, configuration and data onboarding: **[docs/SETUP.md](docs/SETUP.md)**.
+**New here? Start with [docs/USAGE.md](docs/USAGE.md)** — setup, supported input types and formats, how to write a
+mapping for your own data, and how to use the workbench. Local development without Docker and configuration:
+[docs/SETUP.md](docs/SETUP.md).
 
 ## Documentation
 
 | Document | Contents |
 |---|---|
+| [USAGE.md](docs/USAGE.md) | setup, input types & formats, mappings, workbench walkthrough, search syntax, scripts |
 | [ARCHITECTURE.md](docs/ARCHITECTURE.md) | architecture diagram, epistemic model, data model & indexes, lineage, scale design, AI boundary |
 | [API.md](docs/API.md) · [openapi.json](docs/openapi.json) | REST + WebSocket reference |
 | [ONTOLOGY.md](docs/ONTOLOGY.md) | generated ontology reference |
