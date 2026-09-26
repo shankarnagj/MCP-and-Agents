@@ -44,7 +44,7 @@ export function useActions() {
   );
 
   const pin = useCallback(
-    async (kind: string, ref_id: string, title: string, content: Record<string, unknown> = {}) => {
+    async (kind: string, ref_id: string | null, title: string, content: Record<string, unknown> = {}) => {
       if (!state.investigationId) {
         dispatch({ type: "TOAST", level: "info", text: "Open or create an investigation first (Investigation tab)." });
         return;

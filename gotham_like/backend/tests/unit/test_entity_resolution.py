@@ -97,3 +97,12 @@ def test_blocking_keys_tolerate_order_and_format():
     k1 = blocking_keys(ONTO, "Person", {"name": "Kalo Venri", "email": "kalo@example.com"})
     k2 = blocking_keys(ONTO, "Person", {"name": "Venri Kalo", "email": "KALO@example.com"})
     assert k1 & k2
+
+
+def test_evidence_never_contains_raw_values():
+    """Evidence text is visible to roles that may not see the underlying fields (e.g. restricted DOB)."""
+    a = {"name": "Kalo Venri", "email": "kalo@example.com", "phone": "+12025550101", "date_of_birth": "1980-01-02", "address": "12 Harbor Street"}
+    b = {"name": "Kalo Venri", "email": "other@example.com", "phone": "+12025550199", "date_of_birth": "1973-01-15", "address": "9 Mill Road"}
+    text = " ".join(compare(ONTO, "Person", a, b).reasons())
+    for raw in ("1980", "1973", "kalo@", "other@", "2025550", "Harbor", "Mill"):
+        assert raw not in text, raw

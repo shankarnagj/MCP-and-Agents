@@ -115,7 +115,7 @@ export function InvestigationView() {
   }
 
   const by = (k: string) => inv.items.filter((i) => i.kind === k);
-  const evidence = inv.items.filter((i) => ["note", "citation", "document", "source_record", "event"].includes(i.kind));
+  const evidence = inv.items.filter((i) => ["note", "citation", "document", "source_record", "event", "map", "timeline", "chart", "saved_query"].includes(i.kind));
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-2 border-b border-ink-800 bg-ink-900 p-2">

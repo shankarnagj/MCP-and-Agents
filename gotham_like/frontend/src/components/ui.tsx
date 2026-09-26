@@ -10,7 +10,7 @@ export function Button({ variant = "default", className, ...p }: ButtonHTMLAttri
     <button
       {...p}
       className={cx(
-        "inline-flex items-center gap-1 rounded-sm px-2 py-[3px] text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed",
+        "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-sm px-2 py-[3px] text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed",
         variant === "default" && "bg-ink-700 hover:bg-ink-600 text-ink-100 border border-ink-600",
         variant === "primary" && "bg-accent-dim hover:bg-accent text-white border border-accent-dim",
         variant === "ghost" && "hover:bg-ink-700 text-ink-300",

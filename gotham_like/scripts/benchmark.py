@@ -135,6 +135,12 @@ def generate(url: str, n_ent: int, n_rel: int, n_evt: int, seed: int) -> dict:
     stats = {}
     with psycopg.connect(dsn, autocommit=True) as conn:
         conn.execute("SET synchronous_commit = off")
+        # Standard bulk-load strategy: drop secondary indexes, COPY, rebuild them afterwards.
+        idx = conn.execute("""SELECT indexname, indexdef FROM pg_indexes WHERE schemaname = 'public'
+                              AND tablename IN ('entities', 'relationships', 'events', 'entity_identifiers')
+                              AND indexname NOT LIKE '%pkey' AND indexname NOT LIKE 'uq_%'""").fetchall()
+        for name, _ in idx:
+            conn.execute(f'DROP INDEX "{name}"')
         for name, table, cols, it in (
             ("entities", "entities", ["id", "type", "label", "properties", "source_ids", "confidence", "epistemic_status", "provenance", "classification", "geom",
                                       "lat", "lon", "observed_at", "search_text", "created_at", "updated_at"], ents()),
@@ -148,6 +154,14 @@ def generate(url: str, n_ent: int, n_rel: int, n_evt: int, seed: int) -> dict:
             n = copy_rows(conn, table, cols, it)
             stats[name] = {"rows": n, "seconds": round(time.time() - t, 1), "rows_per_s": int(n / max(time.time() - t, 1e-6))}
             print(f"  loaded {n:,} {name} in {stats[name]['seconds']} s", flush=True)
+        t = time.time()
+        conn.execute("SET maintenance_work_mem = '1GB'")
+        conn.execute("SET max_parallel_maintenance_workers = 4")
+        for name, ddl in idx:
+            conn.execute(ddl)
+        stats["index_build_seconds"] = round(time.time() - t, 1)
+        stats["indexes_rebuilt"] = len(idx)
+        print(f"  rebuilt {len(idx)} indexes in {stats['index_build_seconds']} s", flush=True)
         t = time.time()
         conn.execute("VACUUM ANALYZE")
         stats["vacuum_analyze_s"] = round(time.time() - t, 1)

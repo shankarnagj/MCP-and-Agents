@@ -37,7 +37,7 @@ const fc = (features: GeoJSON.Feature[]): GeoJSON.FeatureCollection => ({ type: 
 
 export function MapView() {
   const { state, dispatch } = useStore();
-  const { addEntity, fail } = useActions();
+  const { addEntity, pin, fail } = useActions();
   const ref = useRef<HTMLDivElement>(null);
   const map = useRef<MLMap | null>(null);
   const [ready, setReady] = useState(false);
@@ -179,6 +179,13 @@ export function MapView() {
       <div className="flex h-8 shrink-0 items-center gap-1 border-b border-ink-800 bg-ink-900 px-2 text-2xs">
         <Button onClick={fit}>Fit to data</Button>
         <Button variant={heat ? "primary" : "default"} onClick={() => setHeat(!heat)}>Heatmap</Button>
+        <Button title="Save this map view (centre, zoom, filters, entities) to the active investigation"
+          onClick={() => { const m = map.current; if (!m) return; const c = m.getCenter();
+            pin("map", null, `Map view @ ${c.lat.toFixed(3)}, ${c.lng.toFixed(3)}`,
+                { center: [c.lng, c.lat], zoom: m.getZoom(), filters: state.filters, entity_ids: Object.keys(state.nodes).slice(0, 500),
+                  radius_query: radiusResult ? { lat: radiusResult.lat, lon: radiusResult.lon, radius_m: radius } : null }); }}>
+          Pin view
+        </Button>
         <Button variant={radiusMode ? "primary" : "default"} onClick={() => setRadiusMode(!radiusMode)}>Radius query</Button>
         <input type="number" value={radius} min={50} max={500000} step={100} onChange={(e) => setRadius(Number(e.target.value))} className="h-6 w-20 rounded-sm border border-ink-600 bg-ink-850 px-1" aria-label="Radius (m)" />
         <span className="text-ink-400">m {radiusMode && "— click the map"}</span>

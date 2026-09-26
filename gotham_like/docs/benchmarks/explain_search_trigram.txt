@@ -1,10 +1,10 @@
-Limit  (cost=0.00..94.54 rows=50 width=6) (actual time=0.077..4.005 rows=50 loops=1)
+Limit  (cost=0.00..108.11 rows=50 width=6) (actual time=0.051..3.256 rows=50 loops=1)
   Buffers: shared hit=35
-  ->  Seq Scan on entities  (cost=0.00..2547.00 rows=1347 width=6) (actual time=0.076..3.997 rows=50 loops=1)
+  ->  Seq Scan on entities  (cost=0.00..2547.00 rows=1178 width=6) (actual time=0.050..3.250 rows=50 loops=1)
         Filter: (('acc-00012345'::text <% search_text) AND (word_similarity('acc-00012345'::text, search_text) >= '0.45'::double precision))
         Rows Removed by Filter: 1028
         Buffers: shared hit=35
 Planning:
   Buffers: shared hit=1
-Planning Time: 0.570 ms
-Execution Time: 4.023 ms
+Planning Time: 0.372 ms
+Execution Time: 3.267 ms

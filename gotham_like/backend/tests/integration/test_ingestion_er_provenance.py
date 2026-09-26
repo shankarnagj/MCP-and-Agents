@@ -152,3 +152,29 @@ def test_unmerge_order_is_enforced(db):
     unmerge(db, d1.id, "tester")
     assert db.get(Entity, d1.id).merged_into is None and db.get(Entity, d2.id).merged_into is None
     db.rollback()
+
+
+def test_postgres_connector_end_to_end(db):
+    """Read from a real PostgreSQL table through the connector (bound filters, validated identifiers)."""
+    import os
+
+    from sqlalchemy import text
+
+    from app.ingestion.postgres import PostgresConnector
+
+    db.execute(text("CREATE SCHEMA IF NOT EXISTS ext"))
+    db.execute(text("DROP TABLE IF EXISTS ext.people"))
+    db.execute(text("CREATE TABLE ext.people (id text primary key, name text, country text, joined date)"))
+    db.execute(text("INSERT INTO ext.people VALUES ('a','Relo Tamsin','Aldoria','2026-01-02'), ('b','Sumar Tidel','Brevia','2026-02-03'), "
+                    "('c','x''; DROP TABLE ext.people; --','Aldoria','2026-03-04')"))
+    db.commit()
+    c = PostgresConnector(os.environ["TESSERA_DATABASE_URL"], "people", "person_ext", "id", columns=["id", "name", "joined"], schema="ext",
+                          equals_filters={"country": "Aldoria"})
+    recs = list(c.iter_records())
+    assert [r.source_record_id for r in recs] == ["a", "c"]
+    assert recs[0].payload["joined"] == "2026-01-02"  # dates made JSON-safe
+    inj = PostgresConnector(os.environ["TESSERA_DATABASE_URL"], "people", "t", "id", schema="ext", equals_filters={"country": "x' OR '1'='1"})
+    assert list(inj.iter_records()) == []
+    assert db.execute(text("SELECT count(*) FROM ext.people")).scalar() == 3
+    db.execute(text("DROP SCHEMA ext CASCADE"))
+    db.commit()

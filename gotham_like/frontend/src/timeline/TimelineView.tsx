@@ -15,7 +15,7 @@ const PALETTE = ["#4ea1ff", "#e0a341", "#57d3c1", "#e5534b", "#b48cff", "#7fd46a
 
 export function TimelineView({ compact = false }: { compact?: boolean }) {
   const { state, dispatch } = useStore();
-  const { fail } = useActions();
+  const { fail, pin } = useActions();
   const ref = useRef<HTMLDivElement>(null);
   const chart = useRef<echarts.ECharts | null>(null);
   const [data, setData] = useState<TimelineResponse | null>(null);
@@ -105,6 +105,12 @@ export function TimelineView({ compact = false }: { compact?: boolean }) {
         {zoomWindow && (
           <Button className="ml-2" onClick={() => dispatch({ type: "SET_FILTERS", filters: { timeFrom: zoomWindow[0], timeTo: zoomWindow[1] } })}>
             Apply {fmtTime(zoomWindow[0]).slice(0, 16)} → {fmtTime(zoomWindow[1]).slice(0, 16)} as time filter
+          </Button>
+        )}
+        {!compact && (
+          <Button onClick={() => pin("timeline", null, `Timeline ${fmtTime(zoomWindow?.[0] ?? data?.span.from).slice(0, 10)} → ${fmtTime(zoomWindow?.[1] ?? data?.span.to).slice(0, 10)}`,
+            { entity_ids: ids.slice(0, 500), bucket, event_types: types, window: zoomWindow, filters: state.filters, total: data?.total })}>
+            Pin view
           </Button>
         )}
         {(state.filters.timeFrom || state.filters.timeTo) && (

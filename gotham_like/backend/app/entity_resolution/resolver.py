@@ -15,7 +15,7 @@ from app.entity_resolution.similarity import levenshtein_similarity, name_simila
 from app.models.common import ResolutionDecision
 from app.ontology import Ontology
 
-RESOLVER_VERSION = "er-1.2.0"
+RESOLVER_VERSION = "er-1.2.1"
 
 # Identifier kinds a single entity can legitimately have many of: a mismatch is not evidence against.
 MULTI_VALUED = {"email", "phone", "ip", "domain", "device_fp"}
@@ -120,7 +120,8 @@ def compare(ontology: Ontology, entity_type: str, a: dict[str, Any], b: dict[str
                 evidence.append(Evidence(prop, "exact", 1.0, SIMILARITY_WEIGHTS["dob"], f"{prop} exact match"))
             else:
                 conflicts.append(f"{prop} conflict")
-                evidence.append(Evidence(prop, "exact", 0.0, SIMILARITY_WEIGHTS["dob"], f"{prop} conflict: {na} vs {nb}"))
+                # never embed raw values in evidence text: it is shown to roles that may not see the field
+                evidence.append(Evidence(prop, "exact", 0.0, SIMILARITY_WEIGHTS["dob"], f"{prop} conflict: values differ"))
 
     counted = [e for e in evidence if e.counted]
     total_w = sum(e.weight for e in counted)

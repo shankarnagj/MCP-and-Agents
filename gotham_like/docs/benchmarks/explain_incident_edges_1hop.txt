@@ -1,18 +1,18 @@
-Append  (cost=46.09..1163.89 rows=314 width=28) (actual time=0.083..0.547 rows=304 loops=1)
-  Buffers: shared hit=360
-  ->  Bitmap Heap Scan on relationships  (cost=46.09..849.30 rows=241 width=28) (actual time=0.082..0.267 rows=148 loops=1)
+Append  (cost=44.77..637.43 rows=149 width=28) (actual time=0.077..0.557 rows=304 loops=1)
+  Buffers: shared hit=361
+  ->  Bitmap Heap Scan on relationships  (cost=44.77..316.59 rows=74 width=28) (actual time=0.076..0.265 rows=148 loops=1)
         Recheck Cond: (((source_id)::text = ANY ('{b14857,b24275,b24600,b8279,b12656,b46190,b2869,b5582,b8968,b16216}'::text[])) AND (deleted_at IS NULL))
         Heap Blocks: exact=145
         Buffers: shared hit=175
-        ->  Bitmap Index Scan on ix_rel_live_source  (cost=0.00..46.00 rows=241 width=0) (actual time=0.062..0.062 rows=148 loops=1)
+        ->  Bitmap Index Scan on ix_rel_live_source  (cost=0.00..44.73 rows=74 width=0) (actual time=0.056..0.056 rows=148 loops=1)
               Index Cond: ((source_id)::text = ANY ('{b14857,b24275,b24600,b8279,b12656,b46190,b2869,b5582,b8968,b16216}'::text[]))
               Buffers: shared hit=30
-  ->  Bitmap Heap Scan on relationships relationships_1  (cost=44.77..313.02 rows=73 width=28) (actual time=0.066..0.254 rows=156 loops=1)
+  ->  Bitmap Heap Scan on relationships relationships_1  (cost=44.77..320.09 rows=75 width=28) (actual time=0.070..0.268 rows=156 loops=1)
         Recheck Cond: (((target_id)::text = ANY ('{b14857,b24275,b24600,b8279,b12656,b46190,b2869,b5582,b8968,b16216}'::text[])) AND (deleted_at IS NULL))
         Heap Blocks: exact=155
-        Buffers: shared hit=185
-        ->  Bitmap Index Scan on ix_rel_live_target  (cost=0.00..44.73 rows=73 width=0) (actual time=0.050..0.050 rows=156 loops=1)
+        Buffers: shared hit=186
+        ->  Bitmap Index Scan on ix_rel_live_target  (cost=0.00..44.73 rows=75 width=0) (actual time=0.052..0.052 rows=156 loops=1)
               Index Cond: ((target_id)::text = ANY ('{b14857,b24275,b24600,b8279,b12656,b46190,b2869,b5582,b8968,b16216}'::text[]))
-              Buffers: shared hit=30
-Planning Time: 0.177 ms
-Execution Time: 0.584 ms
+              Buffers: shared hit=31
+Planning Time: 0.174 ms
+Execution Time: 0.632 ms
