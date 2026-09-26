@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-09-26T10:38:40.568591+00:00",
+  "label": "SYNTHETIC / DEMONSTRATION DATA",
+  "scale": {
+    "entities": 1000000,
+    "relationships": 10000000,
+    "events": 2000000
+  },
+  "load": {
+    "entities": {
+      "rows": 1000000,
+      "seconds": 8.0,
+      "rows_per_s": 124821
+    },
+    "identifiers": {
+      "rows": 1000000,
+      "seconds": 9.9,
+      "rows_per_s": 101256
+    },
+    "relationships": {
+      "rows": 10000000,
+      "seconds": 270.1,
+      "rows_per_s": 37018
+    },
+    "events": {
+      "rows": 2000000,
+      "seconds": 19.5,
+      "rows_per_s": 102430
+    },
+    "index_build_seconds": 102.9,
+    "indexes_rebuilt": 26,
+    "vacuum_analyze_s": 2.0,
+    "load_seconds": 412.5,
+    "database_size": "5594 MB",
+    "hubs": 10000
+  },
+  "queries_ms": {
+    "expand_1hop_typical": {
+      "n": 20,
+      "p50_ms": 3.29,
+      "p95_ms": 5.65,
+      "max_ms": 39.49
+    },
+    "expand_2hop_typical": {
+      "n": 20,
+      "p50_ms": 24.41,
+      "p95_ms": 29.74,
+      "max_ms": 96.45
+    },
+    "expand_3hop_typical": {
+      "n": 20,
+      "p50_ms": 338.41,
+      "p95_ms": 437.57,
+      "max_ms": 3439.13
+    },
+    "expand_2hop_hub_seed": {
+      "n": 20,
+      "p50_ms": 142.11,
+      "p95_ms": 186.61,
+      "max_ms": 195.56
+    },
+    "shortest_path_depth6": {
+      "n": 20,
+      "p50_ms": 73.66,
+      "p95_ms": 623.32,
+      "max_ms": 722.87
+    },
+    "analytics_2hop_window": {
+      "n": 6,
+      "p50_ms": 363.78,
+      "p95_ms": 604.41,
+      "max_ms": 604.41
+    },
+    "search_identifier": {
+      "n": 20,
+      "p50_ms": 2.91,
+      "p95_ms": 3.8,
+      "max_ms": 15.55
+    },
+    "search_fuzzy": {
+      "n": 20,
+      "p50_ms": 18.04,
+      "p95_ms": 43.37,
+      "max_ms": 45.36
+    },
+    "timeline_entity": {
+      "n": 20,
+      "p50_ms": 6.33,
+      "p95_ms": 13.05,
+      "max_ms": 67.2
+    },
+    "timeline_global_week": {
+      "n": 6,
+      "p50_ms": 395.42,
+      "p95_ms": 418.66,
+      "max_ms": 418.66
+    },
+    "geo_radius_2km_time_window": {
+      "n": 20,
+      "p50_ms": 5.1,
+      "p95_ms": 6.66,
+      "max_ms": 18.83
+    },
+    "geo_knn_10": {
+      "n": 20,
+      "p50_ms": 3.07,
+      "p95_ms": 4.08,
+      "max_ms": 4.61
+    }
+  },
+  "machine": {
+    "cpus": 4,
+    "postgres": "16 + PostGIS 3.4 (default config)"
+  }
+}
