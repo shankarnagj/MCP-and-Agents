@@ -1,0 +1,607 @@
+{
+  "version": "1.0.0",
+  "name": "tessera-core",
+  "description": "Configurable core ontology. Edit this file (or POST /api/ontology as ADMIN) to extend.",
+  "sensitivity_levels": {
+    "public": "Visible to all roles",
+    "pii": "Personal data: masked for VIEWER",
+    "restricted": "Highly sensitive: ADMIN/INVESTIGATOR only"
+  },
+  "entity_types": {
+    "Person": {
+      "label": "name",
+      "description": "A natural person (synthetic in demo data).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "searchable": true,
+          "sensitivity": "pii",
+          "resolution": "name"
+        },
+        "email": {
+          "type": "string",
+          "identifier": "email",
+          "sensitivity": "pii",
+          "searchable": true,
+          "resolution": "email"
+        },
+        "phone": {
+          "type": "string",
+          "identifier": "phone",
+          "sensitivity": "pii",
+          "searchable": true,
+          "resolution": "phone"
+        },
+        "date_of_birth": {
+          "type": "date",
+          "sensitivity": "restricted",
+          "resolution": "dob"
+        },
+        "address": {
+          "type": "string",
+          "sensitivity": "pii",
+          "resolution": "address"
+        },
+        "national_id": {
+          "type": "string",
+          "identifier": "national_id",
+          "sensitivity": "restricted"
+        },
+        "nationality": {
+          "type": "string"
+        },
+        "occupation": {
+          "type": "string"
+        }
+      }
+    },
+    "Organization": {
+      "label": "name",
+      "description": "Company, NGO, agency or other legal body.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "searchable": true,
+          "resolution": "org_name"
+        },
+        "registration_number": {
+          "type": "string",
+          "identifier": "org_reg",
+          "searchable": true,
+          "resolution": "org_reg"
+        },
+        "jurisdiction": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string",
+          "resolution": "address"
+        }
+      }
+    },
+    "Account": {
+      "label": "account_number",
+      "description": "Financial or service account.",
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "identifier": "account",
+          "searchable": true,
+          "sensitivity": "pii"
+        },
+        "account_type": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "opened_at": {
+          "type": "datetime"
+        },
+        "status": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "number",
+          "sensitivity": "restricted"
+        }
+      }
+    },
+    "Device": {
+      "label": "device_id",
+      "description": "Physical or virtual device.",
+      "properties": {
+        "device_id": {
+          "type": "string",
+          "identifier": "device",
+          "searchable": true
+        },
+        "device_type": {
+          "type": "string"
+        },
+        "os": {
+          "type": "string"
+        },
+        "fingerprint": {
+          "type": "string",
+          "identifier": "device_fp"
+        }
+      }
+    },
+    "Transaction": {
+      "label": "transaction_id",
+      "description": "A financial transaction.",
+      "properties": {
+        "transaction_id": {
+          "type": "string",
+          "identifier": "transaction",
+          "searchable": true
+        },
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "channel": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "datetime"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "Location": {
+      "label": "name",
+      "description": "A named place with coordinates.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "searchable": true
+        },
+        "city": {
+          "type": "string",
+          "searchable": true
+        },
+        "country": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "number"
+        },
+        "lon": {
+          "type": "number"
+        },
+        "category": {
+          "type": "string"
+        }
+      }
+    },
+    "Address": {
+      "label": "line1",
+      "description": "Postal address.",
+      "properties": {
+        "line1": {
+          "type": "string",
+          "searchable": true,
+          "sensitivity": "pii"
+        },
+        "city": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      }
+    },
+    "IPAddress": {
+      "label": "ip",
+      "description": "IPv4/IPv6 address.",
+      "properties": {
+        "ip": {
+          "type": "string",
+          "identifier": "ip",
+          "searchable": true
+        },
+        "asn": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      }
+    },
+    "Domain": {
+      "label": "domain",
+      "description": "DNS domain name.",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "identifier": "domain",
+          "searchable": true
+        },
+        "registrar": {
+          "type": "string"
+        },
+        "created": {
+          "type": "date"
+        }
+      }
+    },
+    "Vehicle": {
+      "label": "plate",
+      "description": "Road vehicle.",
+      "properties": {
+        "plate": {
+          "type": "string",
+          "identifier": "plate",
+          "searchable": true,
+          "sensitivity": "pii"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        }
+      }
+    },
+    "Shipment": {
+      "label": "shipment_id",
+      "description": "A consignment of goods.",
+      "properties": {
+        "shipment_id": {
+          "type": "string",
+          "identifier": "shipment",
+          "searchable": true
+        },
+        "product": {
+          "type": "string",
+          "searchable": true
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      }
+    },
+    "Vessel": {
+      "label": "name",
+      "description": "A ship.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "searchable": true
+        },
+        "imo": {
+          "type": "string",
+          "identifier": "imo",
+          "searchable": true
+        },
+        "flag": {
+          "type": "string"
+        }
+      }
+    },
+    "Event": {
+      "label": "title",
+      "description": "A discrete happening that is itself analysed as an entity.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "searchable": true
+        },
+        "event_type": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "datetime"
+        }
+      }
+    },
+    "Document": {
+      "label": "title",
+      "description": "A document or file.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "searchable": true
+        },
+        "doc_type": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "identifier": "sha256"
+        }
+      }
+    },
+    "Case": {
+      "label": "title",
+      "description": "An external case reference.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "searchable": true
+        },
+        "reference": {
+          "type": "string",
+          "identifier": "case_ref",
+          "searchable": true
+        }
+      }
+    }
+  },
+  "relationship_types": {
+    "OWNS": {
+      "description": "Source owns/holds target.",
+      "source_types": [
+        "Person",
+        "Organization"
+      ],
+      "target_types": [
+        "Account",
+        "Device",
+        "Vehicle",
+        "Vessel",
+        "Domain",
+        "Organization"
+      ]
+    },
+    "WORKS_FOR": {
+      "description": "Person works for organisation.",
+      "source_types": [
+        "Person"
+      ],
+      "target_types": [
+        "Organization"
+      ]
+    },
+    "EMPLOYED_BY": {
+      "description": "Employment (HR-sourced).",
+      "source_types": [
+        "Person"
+      ],
+      "target_types": [
+        "Organization"
+      ]
+    },
+    "CONTROLS": {
+      "description": "Beneficial / effective control.",
+      "source_types": [
+        "Person",
+        "Organization"
+      ],
+      "target_types": [
+        "Organization",
+        "Account"
+      ]
+    },
+    "INITIATED": {
+      "description": "Account initiated a transaction.",
+      "source_types": [
+        "Account"
+      ],
+      "target_types": [
+        "Transaction"
+      ]
+    },
+    "TRANSFERRED_TO": {
+      "description": "Value moved to target.",
+      "source_types": [
+        "Transaction",
+        "Account"
+      ],
+      "target_types": [
+        "Account",
+        "Organization"
+      ]
+    },
+    "TRANSACTED_WITH": {
+      "description": "Aggregated trading relationship.",
+      "source_types": [
+        "Account",
+        "Person",
+        "Organization"
+      ],
+      "target_types": [
+        "Account",
+        "Person",
+        "Organization"
+      ],
+      "symmetric": true
+    },
+    "LOCATED_AT": {
+      "description": "Entity located at place.",
+      "source_types": [
+        "*"
+      ],
+      "target_types": [
+        "Location",
+        "Address"
+      ]
+    },
+    "REGISTERED_AT": {
+      "description": "Registered address.",
+      "source_types": [
+        "Organization",
+        "Person",
+        "Vessel",
+        "Vehicle"
+      ],
+      "target_types": [
+        "Address",
+        "Location"
+      ]
+    },
+    "CONNECTED_TO": {
+      "description": "Network connection.",
+      "source_types": [
+        "Device",
+        "IPAddress",
+        "Account"
+      ],
+      "target_types": [
+        "IPAddress",
+        "Domain",
+        "Device"
+      ]
+    },
+    "USED": {
+      "description": "Entity used a device.",
+      "source_types": [
+        "Account",
+        "Person"
+      ],
+      "target_types": [
+        "Device"
+      ]
+    },
+    "COMMUNICATED_WITH": {
+      "description": "Communication.",
+      "source_types": [
+        "Person",
+        "Device",
+        "Organization"
+      ],
+      "target_types": [
+        "Person",
+        "Device",
+        "Organization"
+      ],
+      "symmetric": true
+    },
+    "VISITED": {
+      "description": "Entity was at a location.",
+      "source_types": [
+        "Person",
+        "Device",
+        "Vehicle",
+        "Vessel"
+      ],
+      "target_types": [
+        "Location"
+      ]
+    },
+    "RESOLVES_TO": {
+      "description": "DNS resolution.",
+      "source_types": [
+        "Domain"
+      ],
+      "target_types": [
+        "IPAddress"
+      ]
+    },
+    "SHIPPED_BY": {
+      "description": "Shipment sent by supplier.",
+      "source_types": [
+        "Shipment"
+      ],
+      "target_types": [
+        "Organization"
+      ]
+    },
+    "SHIPPED_TO": {
+      "description": "Shipment destination party.",
+      "source_types": [
+        "Shipment"
+      ],
+      "target_types": [
+        "Organization"
+      ]
+    },
+    "CARRIED_BY": {
+      "description": "Shipment carried by vessel/vehicle.",
+      "source_types": [
+        "Shipment"
+      ],
+      "target_types": [
+        "Vessel",
+        "Vehicle"
+      ]
+    },
+    "PASSED_THROUGH": {
+      "description": "Shipment/vessel passed through location.",
+      "source_types": [
+        "Shipment",
+        "Vessel"
+      ],
+      "target_types": [
+        "Location"
+      ]
+    },
+    "ASSOCIATED_WITH": {
+      "description": "Generic association.",
+      "source_types": [
+        "*"
+      ],
+      "target_types": [
+        "*"
+      ],
+      "symmetric": true
+    },
+    "DERIVED_FROM": {
+      "description": "Derivation lineage between entities.",
+      "source_types": [
+        "*"
+      ],
+      "target_types": [
+        "*"
+      ]
+    },
+    "MENTIONS": {
+      "description": "Document mentions entity.",
+      "source_types": [
+        "Document"
+      ],
+      "target_types": [
+        "*"
+      ]
+    },
+    "PART_OF": {
+      "description": "Membership.",
+      "source_types": [
+        "*"
+      ],
+      "target_types": [
+        "Case",
+        "Organization"
+      ]
+    }
+  },
+  "event_types": [
+    "login",
+    "logout",
+    "auth_failure",
+    "transaction",
+    "device_connection",
+    "location_change",
+    "shipment_departure",
+    "shipment_arrival",
+    "port_call",
+    "alert",
+    "incident",
+    "communication",
+    "process_start",
+    "dns_query",
+    "account_opened",
+    "maintenance"
+  ]
+}

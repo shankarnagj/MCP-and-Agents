@@ -1,0 +1,19 @@
+{
+  "description": "Demonstration data sources. All are SYNTHETIC / DEMONSTRATION DATA.",
+  "sources": [
+    {"source_id": "synthetic_locations", "name": "Location registry (synthetic)", "kind": "csv", "path": "locations.csv", "record_type": "location", "id_field": "location_id"},
+    {"source_id": "synthetic_crm", "name": "Customer CRM (synthetic)", "kind": "csv", "path": "persons_crm.csv", "record_type": "person_crm", "id_field": "person_id"},
+    {"source_id": "synthetic_kyc", "name": "KYC onboarding system (synthetic)", "kind": "jsonl", "path": "persons_kyc.jsonl", "record_type": "person_kyc", "id_field": "kyc_id"},
+    {"source_id": "synthetic_registry", "name": "Company registry (synthetic)", "kind": "json", "path": "organizations.json", "items_path": "organizations", "record_type": "organization", "id_field": "org_id"},
+    {"source_id": "synthetic_hr", "name": "Employment records (synthetic)", "kind": "csv", "path": "employment.csv", "record_type": "employment"},
+    {"source_id": "synthetic_ubo", "name": "Beneficial ownership register (synthetic)", "kind": "csv", "path": "controls.csv", "record_type": "control"},
+    {"source_id": "synthetic_core_banking", "name": "Core banking accounts (synthetic)", "kind": "csv", "path": "accounts.csv", "record_type": "account", "id_field": "account_id"},
+    {"source_id": "synthetic_device_intel", "name": "Device inventory (synthetic)", "kind": "jsonl", "path": "devices.jsonl", "record_type": "device", "id_field": "device_id"},
+    {"source_id": "synthetic_device_usage", "name": "Device-session telemetry (synthetic)", "kind": "csv", "path": "device_usage.csv", "record_type": "device_usage"},
+    {"source_id": "synthetic_payments", "name": "Payments ledger (synthetic)", "kind": "parquet", "path": "transactions.parquet", "record_type": "transaction", "id_field": "txn_id"},
+    {"source_id": "synthetic_activity", "name": "Authentication & activity log (synthetic)", "kind": "jsonl", "path": "events.jsonl", "record_type": "activity_event", "id_field": "event_id"},
+    {"source_id": "synthetic_dns", "name": "Passive DNS (synthetic)", "kind": "json", "path": "domains.json", "items_path": "domains", "record_type": "domain", "id_field": "domain"},
+    {"source_id": "synthetic_vessels", "name": "Vessel registry (synthetic)", "kind": "csv", "path": "vessels.csv", "record_type": "vessel", "id_field": "vessel_id"},
+    {"source_id": "synthetic_shipping", "name": "Shipping manifests (synthetic)", "kind": "jsonl", "path": "shipments.jsonl", "record_type": "shipment", "id_field": "shipment_id"}
+  ]
+}

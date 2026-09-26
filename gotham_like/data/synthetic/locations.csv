@@ -1,0 +1,501 @@
+location_id,name,city,country,lat,lon,category
+LOC-0000,Lantern Port 0,Port Veltra,Aldoria,51.470098,3.531533,port
+LOC-0001,Harbor Plaza,Port Veltra,Aldoria,51.45,3.6,retail
+LOC-0002,Mill Retail 2,Oldhaven,Castellan Isles,53.49046,9.938745,retail
+LOC-0003,Canal Retail 3,Kestrel Bay,Dunmark,1.249443,103.850772,retail
+LOC-0004,Orchard Transit 4,Duskmoor,Estovia,40.376589,-3.678395,transit
+LOC-0005,Station Retail 5,Sarnath Quay,Farland,25.159703,55.282867,retail
+LOC-0006,Cedar Office 6,Brightwater,Aldoria,41.908561,-87.653027,office
+LOC-0007,Orchard Atm 7,Lumen City,Brevia,35.745905,139.666446,atm
+LOC-0008,Harbor Port 8,Port Veltra,Castellan Isles,51.391869,3.650089,port
+LOC-0009,Mill Cafe 9,Marisk,Dunmark,48.233114,16.405222,cafe
+LOC-0010,Foundry Warehouse 10,Oldhaven,Estovia,53.557501,9.997482,warehouse
+LOC-0011,Lantern Residential 11,Kestrel Bay,Farland,1.245645,103.787954,residential
+LOC-0012,Orchard Atm 12,Duskmoor,Aldoria,40.489942,-3.648783,atm
+LOC-0013,Station Warehouse 13,Sarnath Quay,Brevia,25.167996,55.289558,warehouse
+LOC-0014,Mill Port 14,Brightwater,Castellan Isles,41.861287,-87.671873,port
+LOC-0015,Station Residential 15,Lumen City,Dunmark,35.695731,139.642597,residential
+LOC-0016,Cedar Transit 16,Port Veltra,Estovia,51.44456,3.566839,transit
+LOC-0017,Cedar Retail 17,Marisk,Farland,48.226611,16.44942,retail
+LOC-0018,Lantern Cafe 18,Oldhaven,Aldoria,53.596386,9.993971,cafe
+LOC-0019,Cedar Warehouse 19,Kestrel Bay,Brevia,1.227469,103.909551,warehouse
+LOC-0020,Station Hotel 20,Duskmoor,Castellan Isles,40.442406,-3.715044,hotel
+LOC-0021,Canal Transit 21,Sarnath Quay,Dunmark,25.166109,55.233478,transit
+LOC-0022,Quarry Cafe 22,Brightwater,Estovia,41.845801,-87.617807,cafe
+LOC-0023,Beacon Transit 23,Lumen City,Farland,35.639542,139.761717,transit
+LOC-0024,Station Atm 24,Port Veltra,Aldoria,51.391032,3.534719,atm
+LOC-0025,Foundry Cafe 25,Marisk,Brevia,48.218371,16.442102,cafe
+LOC-0026,Canal Hotel 26,Oldhaven,Castellan Isles,53.487085,9.932936,hotel
+LOC-0027,Mill Retail 27,Kestrel Bay,Dunmark,1.254168,103.857672,retail
+LOC-0028,Quarry Port 28,Duskmoor,Estovia,40.446192,-3.694671,port
+LOC-0029,Harbor Hotel 29,Sarnath Quay,Farland,25.144008,55.260597,hotel
+LOC-0030,Canal Port 30,Brightwater,Aldoria,41.945415,-87.575823,port
+LOC-0031,Lantern Atm 31,Lumen City,Brevia,35.71776,139.691107,atm
+LOC-0032,Station Residential 32,Port Veltra,Castellan Isles,51.49925,3.601105,residential
+LOC-0033,Harbor Transit 33,Marisk,Dunmark,48.181825,16.351214,transit
+LOC-0034,Quarry Atm 34,Oldhaven,Estovia,53.564262,9.948358,atm
+LOC-0035,Cedar Port 35,Kestrel Bay,Farland,1.344591,103.897808,port
+LOC-0036,Mill Atm 36,Duskmoor,Aldoria,40.356278,-3.645512,atm
+LOC-0037,Station Transit 37,Sarnath Quay,Brevia,25.233428,55.315553,transit
+LOC-0038,Station Transit 38,Brightwater,Castellan Isles,41.826435,-87.633563,transit
+LOC-0039,Cedar Cafe 39,Lumen City,Dunmark,35.646134,139.743684,cafe
+LOC-0040,Lantern Residential 40,Port Veltra,Estovia,51.511825,3.636795,residential
+LOC-0041,Beacon Warehouse 41,Marisk,Farland,48.18544,16.424748,warehouse
+LOC-0042,Cedar Residential 42,Oldhaven,Aldoria,53.607602,9.943007,residential
+LOC-0043,Cedar Transit 43,Kestrel Bay,Brevia,1.227157,103.78096,transit
+LOC-0044,Cedar Retail 44,Duskmoor,Castellan Isles,40.432748,-3.771036,retail
+LOC-0045,Mill Warehouse 45,Sarnath Quay,Dunmark,25.137643,55.202456,warehouse
+LOC-0046,Cedar Hotel 46,Brightwater,Estovia,41.882041,-87.661931,hotel
+LOC-0047,Cedar Hotel 47,Lumen City,Farland,35.685655,139.722195,hotel
+LOC-0048,Mill Residential 48,Port Veltra,Aldoria,51.491026,3.644324,residential
+LOC-0049,Orchard Cafe 49,Marisk,Brevia,48.1419,16.390061,cafe
+LOC-0050,Mill Port 50,Oldhaven,Castellan Isles,53.545247,9.98302,port
+LOC-0051,Cedar Atm 51,Kestrel Bay,Dunmark,1.226665,103.882896,atm
+LOC-0052,Orchard Office 52,Duskmoor,Estovia,40.375545,-3.69477,office
+LOC-0053,Beacon Atm 53,Sarnath Quay,Farland,25.154377,55.264613,atm
+LOC-0054,Harbor Atm 54,Brightwater,Aldoria,41.9244,-87.578689,atm
+LOC-0055,Mill Retail 55,Lumen City,Brevia,35.701931,139.695851,retail
+LOC-0056,Orchard Office 56,Port Veltra,Castellan Isles,51.511458,3.650262,office
+LOC-0057,Harbor Cafe 57,Marisk,Dunmark,48.19793,16.358738,cafe
+LOC-0058,Lantern Cafe 58,Oldhaven,Estovia,53.501659,9.878239,cafe
+LOC-0059,Orchard Port 59,Kestrel Bay,Farland,1.35148,103.8911,port
+LOC-0060,Beacon Transit 60,Duskmoor,Aldoria,40.448338,-3.666774,transit
+LOC-0061,Foundry Retail 61,Sarnath Quay,Brevia,25.150241,55.240697,retail
+LOC-0062,Harbor Warehouse 62,Brightwater,Castellan Isles,41.91398,-87.693285,warehouse
+LOC-0063,Station Transit 63,Lumen City,Dunmark,35.615156,139.686654,transit
+LOC-0064,Mill Office 64,Port Veltra,Estovia,51.386127,3.601128,office
+LOC-0065,Orchard Residential 65,Marisk,Farland,48.213699,16.425256,residential
+LOC-0066,Foundry Residential 66,Oldhaven,Aldoria,53.495209,10.006258,residential
+LOC-0067,Foundry Cafe 67,Kestrel Bay,Brevia,1.303624,103.867208,cafe
+LOC-0068,Cedar Port 68,Duskmoor,Castellan Isles,40.429402,-3.726469,port
+LOC-0069,Orchard Port 69,Sarnath Quay,Dunmark,25.224465,55.243216,port
+LOC-0070,Quarry Hotel 70,Brightwater,Estovia,41.826793,-87.609027,hotel
+LOC-0071,Beacon Retail 71,Lumen City,Farland,35.74184,139.752809,retail
+LOC-0072,Mill Atm 72,Port Veltra,Aldoria,51.467464,3.60908,atm
+LOC-0073,Quarry Office 73,Marisk,Brevia,48.205425,16.400848,office
+LOC-0074,Lantern Warehouse 74,Oldhaven,Castellan Isles,53.604899,10.00467,warehouse
+LOC-0075,Foundry Port 75,Kestrel Bay,Dunmark,1.240666,103.898107,port
+LOC-0076,Harbor Transit 76,Duskmoor,Estovia,40.489745,-3.655733,transit
+LOC-0077,Station Atm 77,Sarnath Quay,Farland,25.224196,55.277871,atm
+LOC-0078,Station Transit 78,Brightwater,Aldoria,41.846049,-87.573825,transit
+LOC-0079,Cedar Warehouse 79,Lumen City,Brevia,35.647185,139.705111,warehouse
+LOC-0080,Beacon Transit 80,Port Veltra,Castellan Isles,51.477027,3.65087,transit
+LOC-0081,Mill Retail 81,Marisk,Dunmark,48.164126,16.458834,retail
+LOC-0082,Harbor Retail 82,Oldhaven,Estovia,53.569356,9.997474,retail
+LOC-0083,Station Port 83,Kestrel Bay,Farland,1.266008,103.796785,port
+LOC-0084,Canal Cafe 84,Duskmoor,Aldoria,40.454772,-3.692551,cafe
+LOC-0085,Canal Office 85,Sarnath Quay,Brevia,25.129322,55.208774,office
+LOC-0086,Station Transit 86,Brightwater,Castellan Isles,41.813121,-87.648852,transit
+LOC-0087,Harbor Warehouse 87,Lumen City,Dunmark,35.669879,139.623957,warehouse
+LOC-0088,Mill Residential 88,Port Veltra,Estovia,51.507503,3.558209,residential
+LOC-0089,Foundry Cafe 89,Marisk,Farland,48.178909,16.408632,cafe
+LOC-0090,Station Residential 90,Oldhaven,Aldoria,53.585961,10.011371,residential
+LOC-0091,Harbor Cafe 91,Kestrel Bay,Brevia,1.358642,103.894796,cafe
+LOC-0092,Cedar Cafe 92,Duskmoor,Castellan Isles,40.373782,-3.638813,cafe
+LOC-0093,Orchard Atm 93,Sarnath Quay,Dunmark,25.166386,55.311423,atm
+LOC-0094,Cedar Residential 94,Brightwater,Estovia,41.933646,-87.578311,residential
+LOC-0095,Cedar Port 95,Lumen City,Farland,35.725634,139.684278,port
+LOC-0096,Quarry Cafe 96,Port Veltra,Aldoria,51.410061,3.623068,cafe
+LOC-0097,Quarry Port 97,Marisk,Brevia,48.168087,16.337935,port
+LOC-0098,Quarry Transit 98,Oldhaven,Castellan Isles,53.570394,9.935539,transit
+LOC-0099,Station Port 99,Kestrel Bay,Dunmark,1.353313,103.794554,port
+LOC-0100,Harbor Port 100,Duskmoor,Estovia,40.431617,-3.630299,port
+LOC-0101,Orchard Warehouse 101,Sarnath Quay,Farland,25.143554,55.260568,warehouse
+LOC-0102,Foundry Cafe 102,Brightwater,Aldoria,41.895309,-87.628353,cafe
+LOC-0103,Harbor Cafe 103,Lumen City,Brevia,35.635327,139.624326,cafe
+LOC-0104,Quarry Residential 104,Port Veltra,Castellan Isles,51.452871,3.644182,residential
+LOC-0105,Foundry Warehouse 105,Marisk,Dunmark,48.190097,16.464703,warehouse
+LOC-0106,Canal Port 106,Oldhaven,Estovia,53.523177,10.000164,port
+LOC-0107,Lantern Cafe 107,Kestrel Bay,Farland,1.26251,103.836795,cafe
+LOC-0108,Station Cafe 108,Duskmoor,Aldoria,40.427843,-3.744419,cafe
+LOC-0109,Harbor Transit 109,Sarnath Quay,Brevia,25.216651,55.241308,transit
+LOC-0110,Beacon Warehouse 110,Brightwater,Castellan Isles,41.85173,-87.671775,warehouse
+LOC-0111,Beacon Transit 111,Lumen City,Dunmark,35.671609,139.715316,transit
+LOC-0112,Mill Office 112,Port Veltra,Estovia,51.49234,3.666282,office
+LOC-0113,Mill Warehouse 113,Marisk,Farland,48.168834,16.423619,warehouse
+LOC-0114,Cedar Port 114,Oldhaven,Aldoria,53.595899,9.9862,port
+LOC-0115,Cedar Retail 115,Kestrel Bay,Brevia,1.334189,103.799168,retail
+LOC-0116,Beacon Atm 116,Duskmoor,Castellan Isles,40.489757,-3.683961,atm
+LOC-0117,Orchard Residential 117,Sarnath Quay,Dunmark,25.187667,55.288705,residential
+LOC-0118,Mill Retail 118,Brightwater,Estovia,41.87919,-87.666903,retail
+LOC-0119,Beacon Transit 119,Lumen City,Farland,35.720133,139.649473,transit
+LOC-0120,Beacon Atm 120,Port Veltra,Aldoria,51.385167,3.563848,atm
+LOC-0121,Canal Transit 121,Marisk,Brevia,48.147148,16.394904,transit
+LOC-0122,Foundry Hotel 122,Oldhaven,Castellan Isles,53.563759,10.014871,hotel
+LOC-0123,Canal Cafe 123,Kestrel Bay,Dunmark,1.335406,103.906507,cafe
+LOC-0124,Beacon Hotel 124,Duskmoor,Estovia,40.412204,-3.74913,hotel
+LOC-0125,Canal Port 125,Sarnath Quay,Farland,25.165289,55.233566,port
+LOC-0126,Mill Hotel 126,Brightwater,Aldoria,41.87778,-87.667586,hotel
+LOC-0127,Quarry Warehouse 127,Lumen City,Brevia,35.710781,139.651729,warehouse
+LOC-0128,Cedar Office 128,Port Veltra,Castellan Isles,51.506653,3.539543,office
+LOC-0129,Mill Residential 129,Marisk,Dunmark,48.18314,16.349954,residential
+LOC-0130,Orchard Hotel 130,Oldhaven,Estovia,53.537729,9.925623,hotel
+LOC-0131,Foundry Cafe 131,Kestrel Bay,Farland,1.226903,103.897984,cafe
+LOC-0132,Beacon Cafe 132,Duskmoor,Aldoria,40.484297,-3.769257,cafe
+LOC-0133,Orchard Cafe 133,Sarnath Quay,Brevia,25.128778,55.248632,cafe
+LOC-0134,Beacon Residential 134,Brightwater,Castellan Isles,41.885509,-87.596179,residential
+LOC-0135,Orchard Retail 135,Lumen City,Dunmark,35.639556,139.680751,retail
+LOC-0136,Station Cafe 136,Port Veltra,Estovia,51.426379,3.625822,cafe
+LOC-0137,Harbor Transit 137,Marisk,Farland,48.249082,16.460474,transit
+LOC-0138,Mill Retail 138,Oldhaven,Aldoria,53.608656,9.963246,retail
+LOC-0139,Station Hotel 139,Kestrel Bay,Brevia,1.310577,103.797488,hotel
+LOC-0140,Beacon Residential 140,Duskmoor,Castellan Isles,40.355176,-3.717426,residential
+LOC-0141,Lantern Cafe 141,Sarnath Quay,Dunmark,25.175041,55.307655,cafe
+LOC-0142,Mill Port 142,Brightwater,Estovia,41.916326,-87.582155,port
+LOC-0143,Quarry Retail 143,Lumen City,Farland,35.67572,139.725895,retail
+LOC-0144,Harbor Retail 144,Port Veltra,Aldoria,51.410248,3.537819,retail
+LOC-0145,Foundry Retail 145,Marisk,Brevia,48.264809,16.356665,retail
+LOC-0146,Foundry Atm 146,Oldhaven,Castellan Isles,53.499893,9.896122,atm
+LOC-0147,Quarry Port 147,Kestrel Bay,Dunmark,1.354542,103.84496,port
+LOC-0148,Station Atm 148,Duskmoor,Estovia,40.372114,-3.684541,atm
+LOC-0149,Lantern Retail 149,Sarnath Quay,Farland,25.266987,55.21351,retail
+LOC-0150,Orchard Port 150,Brightwater,Aldoria,41.890926,-87.571185,port
+LOC-0151,Foundry Atm 151,Lumen City,Brevia,35.665103,139.720993,atm
+LOC-0152,Lantern Atm 152,Port Veltra,Castellan Isles,51.477476,3.618341,atm
+LOC-0153,Foundry Atm 153,Marisk,Dunmark,48.250493,16.414474,atm
+LOC-0154,Quarry Cafe 154,Oldhaven,Estovia,53.59074,9.927975,cafe
+LOC-0155,Orchard Retail 155,Kestrel Bay,Farland,1.227868,103.871267,retail
+LOC-0156,Beacon Warehouse 156,Duskmoor,Aldoria,40.466462,-3.756859,warehouse
+LOC-0157,Lantern Transit 157,Sarnath Quay,Brevia,25.229882,55.260701,transit
+LOC-0158,Beacon Hotel 158,Brightwater,Castellan Isles,41.896708,-87.569515,hotel
+LOC-0159,Quarry Port 159,Lumen City,Dunmark,35.670713,139.723301,port
+LOC-0160,Lantern Atm 160,Port Veltra,Estovia,51.500697,3.647673,atm
+LOC-0161,Foundry Hotel 161,Marisk,Farland,48.25501,16.363079,hotel
+LOC-0162,Beacon Retail 162,Oldhaven,Aldoria,53.565904,9.932557,retail
+LOC-0163,Quarry Residential 163,Kestrel Bay,Brevia,1.340588,103.804139,residential
+LOC-0164,Canal Port 164,Duskmoor,Castellan Isles,40.462931,-3.723014,port
+LOC-0165,Cedar Atm 165,Sarnath Quay,Dunmark,25.129391,55.334586,atm
+LOC-0166,Beacon Residential 166,Brightwater,Estovia,41.911722,-87.631646,residential
+LOC-0167,Mill Retail 167,Lumen City,Farland,35.701031,139.688677,retail
+LOC-0168,Lantern Residential 168,Port Veltra,Aldoria,51.42034,3.58622,residential
+LOC-0169,Canal Transit 169,Marisk,Brevia,48.223634,16.38112,transit
+LOC-0170,Quarry Transit 170,Oldhaven,Castellan Isles,53.527479,10.021587,transit
+LOC-0171,Lantern Port 171,Kestrel Bay,Dunmark,1.268639,103.843333,port
+LOC-0172,Mill Warehouse 172,Duskmoor,Estovia,40.381159,-3.668103,warehouse
+LOC-0173,Cedar Office 173,Sarnath Quay,Farland,25.23501,55.334991,office
+LOC-0174,Foundry Transit 174,Brightwater,Aldoria,41.839119,-87.632278,transit
+LOC-0175,Lantern Residential 175,Lumen City,Brevia,35.648721,139.632418,residential
+LOC-0176,Canal Retail 176,Port Veltra,Castellan Isles,51.410718,3.553793,retail
+LOC-0177,Canal Retail 177,Marisk,Dunmark,48.146174,16.334489,retail
+LOC-0178,Mill Hotel 178,Oldhaven,Estovia,53.520038,10.014013,hotel
+LOC-0179,Beacon Hotel 179,Kestrel Bay,Farland,1.343725,103.860676,hotel
+LOC-0180,Lantern Retail 180,Duskmoor,Aldoria,40.411419,-3.745497,retail
+LOC-0181,Orchard Atm 181,Sarnath Quay,Brevia,25.263577,55.26679,atm
+LOC-0182,Station Retail 182,Brightwater,Castellan Isles,41.87881,-87.618898,retail
+LOC-0183,Mill Port 183,Lumen City,Dunmark,35.629434,139.699058,port
+LOC-0184,Foundry Cafe 184,Port Veltra,Estovia,51.521195,3.545002,cafe
+LOC-0185,Orchard Transit 185,Marisk,Farland,48.213856,16.417069,transit
+LOC-0186,Lantern Cafe 186,Oldhaven,Aldoria,53.542867,9.941744,cafe
+LOC-0187,Cedar Atm 187,Kestrel Bay,Brevia,1.299893,103.78661,atm
+LOC-0188,Station Atm 188,Duskmoor,Castellan Isles,40.438092,-3.733925,atm
+LOC-0189,Harbor Office 189,Sarnath Quay,Dunmark,25.162503,55.277494,office
+LOC-0190,Lantern Hotel 190,Brightwater,Estovia,41.866813,-87.602703,hotel
+LOC-0191,Beacon Port 191,Lumen City,Farland,35.612633,139.659457,port
+LOC-0192,Foundry Port 192,Port Veltra,Aldoria,51.388188,3.561575,port
+LOC-0193,Mill Cafe 193,Marisk,Brevia,48.223234,16.462511,cafe
+LOC-0194,Station Port 194,Oldhaven,Castellan Isles,53.556423,9.971281,port
+LOC-0195,Foundry Port 195,Kestrel Bay,Dunmark,1.228221,103.801845,port
+LOC-0196,Beacon Port 196,Duskmoor,Estovia,40.455886,-3.690024,port
+LOC-0197,Lantern Cafe 197,Sarnath Quay,Farland,25.145853,55.297197,cafe
+LOC-0198,Foundry Atm 198,Brightwater,Aldoria,41.880068,-87.630894,atm
+LOC-0199,Foundry Warehouse 199,Lumen City,Brevia,35.613674,139.680202,warehouse
+LOC-0200,Foundry Port 200,Port Veltra,Castellan Isles,51.414017,3.541092,port
+LOC-0201,Foundry Port 201,Marisk,Dunmark,48.212558,16.330918,port
+LOC-0202,Canal Hotel 202,Oldhaven,Estovia,53.483727,9.98694,hotel
+LOC-0203,Foundry Office 203,Kestrel Bay,Farland,1.311839,103.909974,office
+LOC-0204,Beacon Atm 204,Duskmoor,Aldoria,40.410758,-3.654703,atm
+LOC-0205,Station Atm 205,Sarnath Quay,Brevia,25.178084,55.245972,atm
+LOC-0206,Orchard Port 206,Brightwater,Castellan Isles,41.855467,-87.602083,port
+LOC-0207,Mill Hotel 207,Lumen City,Dunmark,35.725199,139.697221,hotel
+LOC-0208,Canal Cafe 208,Port Veltra,Estovia,51.423264,3.574526,cafe
+LOC-0209,Beacon Transit 209,Marisk,Farland,48.246836,16.328094,transit
+LOC-0210,Foundry Warehouse 210,Oldhaven,Aldoria,53.537495,9.904967,warehouse
+LOC-0211,Cedar Retail 211,Kestrel Bay,Brevia,1.326965,103.868077,retail
+LOC-0212,Beacon Port 212,Duskmoor,Castellan Isles,40.386423,-3.753187,port
+LOC-0213,Foundry Retail 213,Sarnath Quay,Dunmark,25.254897,55.267796,retail
+LOC-0214,Canal Port 214,Brightwater,Estovia,41.923144,-87.599761,port
+LOC-0215,Mill Residential 215,Lumen City,Farland,35.609899,139.676737,residential
+LOC-0216,Beacon Office 216,Port Veltra,Aldoria,51.444443,3.54486,office
+LOC-0217,Orchard Port 217,Marisk,Brevia,48.262364,16.369998,port
+LOC-0218,Beacon Residential 218,Oldhaven,Castellan Isles,53.598248,10.019224,residential
+LOC-0219,Station Transit 219,Kestrel Bay,Dunmark,1.29739,103.83322,transit
+LOC-0220,Quarry Cafe 220,Duskmoor,Estovia,40.472472,-3.732253,cafe
+LOC-0221,Lantern Retail 221,Sarnath Quay,Farland,25.262594,55.271115,retail
+LOC-0222,Station Hotel 222,Brightwater,Aldoria,41.912584,-87.581355,hotel
+LOC-0223,Canal Warehouse 223,Lumen City,Brevia,35.672295,139.687743,warehouse
+LOC-0224,Cedar Warehouse 224,Port Veltra,Castellan Isles,51.487892,3.582301,warehouse
+LOC-0225,Cedar Cafe 225,Marisk,Dunmark,48.269301,16.36235,cafe
+LOC-0226,Beacon Warehouse 226,Oldhaven,Estovia,53.601317,9.937139,warehouse
+LOC-0227,Station Cafe 227,Kestrel Bay,Farland,1.319582,103.894888,cafe
+LOC-0228,Foundry Transit 228,Duskmoor,Aldoria,40.419327,-3.766736,transit
+LOC-0229,Mill Hotel 229,Sarnath Quay,Brevia,25.175783,55.212395,hotel
+LOC-0230,Orchard Office 230,Brightwater,Castellan Isles,41.883741,-87.636209,office
+LOC-0231,Beacon Atm 231,Lumen City,Dunmark,35.733468,139.757742,atm
+LOC-0232,Mill Cafe 232,Port Veltra,Estovia,51.49058,3.566129,cafe
+LOC-0233,Orchard Transit 233,Marisk,Farland,48.250705,16.450788,transit
+LOC-0234,Canal Hotel 234,Oldhaven,Aldoria,53.615462,9.968277,hotel
+LOC-0235,Cedar Port 235,Kestrel Bay,Brevia,1.223103,103.78779,port
+LOC-0236,Mill Atm 236,Duskmoor,Castellan Isles,40.45557,-3.709518,atm
+LOC-0237,Harbor Retail 237,Sarnath Quay,Dunmark,25.191882,55.297964,retail
+LOC-0238,Quarry Warehouse 238,Brightwater,Estovia,41.854685,-87.693983,warehouse
+LOC-0239,Foundry Cafe 239,Lumen City,Farland,35.670009,139.653128,cafe
+LOC-0240,Mill Office 240,Port Veltra,Aldoria,51.476205,3.553882,office
+LOC-0241,Beacon Residential 241,Marisk,Brevia,48.215783,16.383069,residential
+LOC-0242,Lantern Hotel 242,Oldhaven,Castellan Isles,53.609507,9.898558,hotel
+LOC-0243,Lantern Hotel 243,Kestrel Bay,Dunmark,1.284172,103.874049,hotel
+LOC-0244,Quarry Hotel 244,Duskmoor,Estovia,40.445602,-3.749301,hotel
+LOC-0245,Lantern Cafe 245,Sarnath Quay,Farland,25.270292,55.241049,cafe
+LOC-0246,Beacon Cafe 246,Brightwater,Aldoria,41.873778,-87.658523,cafe
+LOC-0247,Foundry Warehouse 247,Lumen City,Brevia,35.623301,139.672899,warehouse
+LOC-0248,Orchard Retail 248,Port Veltra,Castellan Isles,51.420576,3.628725,retail
+LOC-0249,Foundry Retail 249,Marisk,Dunmark,48.167493,16.409503,retail
+LOC-0250,Lantern Port 250,Oldhaven,Estovia,53.58534,9.997977,port
+LOC-0251,Cedar Warehouse 251,Kestrel Bay,Farland,1.329746,103.811098,warehouse
+LOC-0252,Mill Office 252,Duskmoor,Aldoria,40.439693,-3.682574,office
+LOC-0253,Beacon Port 253,Sarnath Quay,Brevia,25.258148,55.291094,port
+LOC-0254,Mill Office 254,Brightwater,Castellan Isles,41.812737,-87.649479,office
+LOC-0255,Station Cafe 255,Lumen City,Dunmark,35.739045,139.665023,cafe
+LOC-0256,Canal Warehouse 256,Port Veltra,Estovia,51.406871,3.641299,warehouse
+LOC-0257,Lantern Office 257,Marisk,Farland,48.200259,16.367211,office
+LOC-0258,Quarry Port 258,Oldhaven,Aldoria,53.609683,10.014027,port
+LOC-0259,Station Atm 259,Kestrel Bay,Brevia,1.333853,103.845435,atm
+LOC-0260,Canal Cafe 260,Duskmoor,Castellan Isles,40.456634,-3.739551,cafe
+LOC-0261,Lantern Retail 261,Sarnath Quay,Dunmark,25.180652,55.3119,retail
+LOC-0262,Foundry Port 262,Brightwater,Estovia,41.885272,-87.636517,port
+LOC-0263,Mill Warehouse 263,Lumen City,Farland,35.662851,139.709971,warehouse
+LOC-0264,Quarry Transit 264,Port Veltra,Aldoria,51.475202,3.595889,transit
+LOC-0265,Beacon Atm 265,Marisk,Brevia,48.259857,16.359837,atm
+LOC-0266,Mill Cafe 266,Oldhaven,Castellan Isles,53.609011,9.921487,cafe
+LOC-0267,Beacon Port 267,Kestrel Bay,Dunmark,1.238076,103.914326,port
+LOC-0268,Station Transit 268,Duskmoor,Estovia,40.364666,-3.738227,transit
+LOC-0269,Orchard Transit 269,Sarnath Quay,Farland,25.183949,55.251407,transit
+LOC-0270,Mill Cafe 270,Brightwater,Aldoria,41.89259,-87.597337,cafe
+LOC-0271,Harbor Port 271,Lumen City,Brevia,35.7281,139.706671,port
+LOC-0272,Cedar Hotel 272,Port Veltra,Castellan Isles,51.477428,3.559246,hotel
+LOC-0273,Canal Warehouse 273,Marisk,Dunmark,48.251236,16.342249,warehouse
+LOC-0274,Orchard Retail 274,Oldhaven,Estovia,53.607902,9.970876,retail
+LOC-0275,Mill Hotel 275,Kestrel Bay,Farland,1.257695,103.917489,hotel
+LOC-0276,Harbor Retail 276,Duskmoor,Aldoria,40.443462,-3.679574,retail
+LOC-0277,Foundry Office 277,Sarnath Quay,Brevia,25.24134,55.233037,office
+LOC-0278,Cedar Transit 278,Brightwater,Castellan Isles,41.837507,-87.582459,transit
+LOC-0279,Quarry Residential 279,Lumen City,Dunmark,35.692452,139.735125,residential
+LOC-0280,Lantern Retail 280,Port Veltra,Estovia,51.489549,3.641606,retail
+LOC-0281,Canal Office 281,Marisk,Farland,48.251662,16.348784,office
+LOC-0282,Station Retail 282,Oldhaven,Aldoria,53.514058,9.903081,retail
+LOC-0283,Foundry Residential 283,Kestrel Bay,Brevia,1.22007,103.8918,residential
+LOC-0284,Station Retail 284,Duskmoor,Castellan Isles,40.394598,-3.746956,retail
+LOC-0285,Beacon Atm 285,Sarnath Quay,Dunmark,25.234842,55.27376,atm
+LOC-0286,Beacon Atm 286,Brightwater,Estovia,41.872544,-87.649886,atm
+LOC-0287,Canal Retail 287,Lumen City,Farland,35.680553,139.754204,retail
+LOC-0288,Harbor Retail 288,Port Veltra,Aldoria,51.421406,3.620662,retail
+LOC-0289,Mill Cafe 289,Marisk,Brevia,48.271868,16.450061,cafe
+LOC-0290,Mill Atm 290,Oldhaven,Castellan Isles,53.548597,10.009056,atm
+LOC-0291,Lantern Office 291,Kestrel Bay,Dunmark,1.264358,103.799309,office
+LOC-0292,Orchard Warehouse 292,Duskmoor,Estovia,40.43792,-3.687695,warehouse
+LOC-0293,Canal Hotel 293,Sarnath Quay,Farland,25.271298,55.274405,hotel
+LOC-0294,Canal Atm 294,Brightwater,Aldoria,41.895197,-87.687776,atm
+LOC-0295,Cedar Hotel 295,Lumen City,Brevia,35.711833,139.648922,hotel
+LOC-0296,Orchard Cafe 296,Port Veltra,Castellan Isles,51.437577,3.647196,cafe
+LOC-0297,Lantern Warehouse 297,Marisk,Dunmark,48.233097,16.37298,warehouse
+LOC-0298,Mill Hotel 298,Oldhaven,Estovia,53.531881,9.89993,hotel
+LOC-0299,Mill Cafe 299,Kestrel Bay,Farland,1.231077,103.790233,cafe
+LOC-0300,Station Port 300,Duskmoor,Aldoria,40.455256,-3.718357,port
+LOC-0301,Canal Transit 301,Sarnath Quay,Brevia,25.208126,55.282463,transit
+LOC-0302,Orchard Warehouse 302,Brightwater,Castellan Isles,41.855444,-87.684453,warehouse
+LOC-0303,Foundry Port 303,Lumen City,Dunmark,35.733058,139.721865,port
+LOC-0304,Cedar Transit 304,Port Veltra,Estovia,51.422966,3.542861,transit
+LOC-0305,Quarry Atm 305,Marisk,Farland,48.150231,16.397433,atm
+LOC-0306,Foundry Port 306,Oldhaven,Aldoria,53.599784,9.93091,port
+LOC-0307,Foundry Transit 307,Kestrel Bay,Brevia,1.250527,103.839782,transit
+LOC-0308,Foundry Retail 308,Duskmoor,Castellan Isles,40.436371,-3.679431,retail
+LOC-0309,Harbor Port 309,Sarnath Quay,Dunmark,25.26185,55.31749,port
+LOC-0310,Quarry Port 310,Brightwater,Estovia,41.833934,-87.600782,port
+LOC-0311,Foundry Office 311,Lumen City,Farland,35.658526,139.644076,office
+LOC-0312,Mill Retail 312,Port Veltra,Aldoria,51.47268,3.537958,retail
+LOC-0313,Beacon Cafe 313,Marisk,Brevia,48.235476,16.358938,cafe
+LOC-0314,Foundry Warehouse 314,Oldhaven,Castellan Isles,53.527066,9.931269,warehouse
+LOC-0315,Station Office 315,Kestrel Bay,Dunmark,1.30387,103.905257,office
+LOC-0316,Lantern Atm 316,Duskmoor,Estovia,40.456675,-3.764899,atm
+LOC-0317,Orchard Hotel 317,Sarnath Quay,Farland,25.1918,55.259047,hotel
+LOC-0318,Quarry Atm 318,Brightwater,Aldoria,41.847303,-87.593251,atm
+LOC-0319,Canal Hotel 319,Lumen City,Brevia,35.669897,139.658756,hotel
+LOC-0320,Foundry Cafe 320,Port Veltra,Castellan Isles,51.474091,3.534475,cafe
+LOC-0321,Station Residential 321,Marisk,Dunmark,48.135824,16.357394,residential
+LOC-0322,Harbor Atm 322,Oldhaven,Estovia,53.588077,9.91965,atm
+LOC-0323,Orchard Office 323,Kestrel Bay,Farland,1.289623,103.840004,office
+LOC-0324,Quarry Transit 324,Duskmoor,Aldoria,40.424697,-3.738903,transit
+LOC-0325,Orchard Retail 325,Sarnath Quay,Brevia,25.138317,55.322146,retail
+LOC-0326,Foundry Warehouse 326,Brightwater,Castellan Isles,41.810629,-87.569292,warehouse
+LOC-0327,Lantern Cafe 327,Lumen City,Dunmark,35.669807,139.676223,cafe
+LOC-0328,Station Warehouse 328,Port Veltra,Estovia,51.394529,3.530934,warehouse
+LOC-0329,Mill Warehouse 329,Marisk,Farland,48.243434,16.417027,warehouse
+LOC-0330,Foundry Cafe 330,Oldhaven,Aldoria,53.540877,9.893187,cafe
+LOC-0331,Quarry Port 331,Kestrel Bay,Brevia,1.27565,103.789264,port
+LOC-0332,Canal Atm 332,Duskmoor,Castellan Isles,40.379866,-3.659767,atm
+LOC-0333,Quarry Residential 333,Sarnath Quay,Dunmark,25.219204,55.274412,residential
+LOC-0334,Cedar Office 334,Brightwater,Estovia,41.858537,-87.56395,office
+LOC-0335,Foundry Office 335,Lumen City,Farland,35.622747,139.654824,office
+LOC-0336,Station Atm 336,Port Veltra,Aldoria,51.399963,3.637355,atm
+LOC-0337,Foundry Hotel 337,Marisk,Brevia,48.265051,16.418443,hotel
+LOC-0338,Quarry Warehouse 338,Oldhaven,Castellan Isles,53.58746,9.942635,warehouse
+LOC-0339,Lantern Hotel 339,Kestrel Bay,Dunmark,1.239688,103.787771,hotel
+LOC-0340,Canal Warehouse 340,Duskmoor,Estovia,40.462714,-3.686822,warehouse
+LOC-0341,Harbor Retail 341,Sarnath Quay,Farland,25.138622,55.264485,retail
+LOC-0342,Foundry Atm 342,Brightwater,Aldoria,41.861079,-87.660692,atm
+LOC-0343,Harbor Transit 343,Lumen City,Brevia,35.693561,139.673349,transit
+LOC-0344,Quarry Residential 344,Port Veltra,Castellan Isles,51.442754,3.644658,residential
+LOC-0345,Beacon Retail 345,Marisk,Dunmark,48.215136,16.400197,retail
+LOC-0346,Mill Warehouse 346,Oldhaven,Estovia,53.492847,10.007532,warehouse
+LOC-0347,Beacon Residential 347,Kestrel Bay,Farland,1.290656,103.802801,residential
+LOC-0348,Quarry Office 348,Duskmoor,Aldoria,40.490773,-3.696531,office
+LOC-0349,Quarry Cafe 349,Sarnath Quay,Brevia,25.181672,55.238705,cafe
+LOC-0350,Quarry Port 350,Brightwater,Castellan Isles,41.905787,-87.694524,port
+LOC-0351,Lantern Cafe 351,Lumen City,Dunmark,35.617429,139.63155,cafe
+LOC-0352,Quarry Office 352,Port Veltra,Estovia,51.414252,3.650676,office
+LOC-0353,Lantern Warehouse 353,Marisk,Farland,48.139676,16.423584,warehouse
+LOC-0354,Station Cafe 354,Oldhaven,Aldoria,53.617416,9.97861,cafe
+LOC-0355,Canal Port 355,Kestrel Bay,Brevia,1.3037,103.913135,port
+LOC-0356,Canal Office 356,Duskmoor,Castellan Isles,40.402224,-3.657959,office
+LOC-0357,Quarry Transit 357,Sarnath Quay,Dunmark,25.141399,55.29457,transit
+LOC-0358,Quarry Residential 358,Brightwater,Estovia,41.810556,-87.657551,residential
+LOC-0359,Station Residential 359,Lumen City,Farland,35.744529,139.688021,residential
+LOC-0360,Canal Atm 360,Port Veltra,Aldoria,51.400262,3.570565,atm
+LOC-0361,Harbor Transit 361,Marisk,Brevia,48.239045,16.448306,transit
+LOC-0362,Foundry Office 362,Oldhaven,Castellan Isles,53.573341,10.004255,office
+LOC-0363,Beacon Office 363,Kestrel Bay,Dunmark,1.27223,103.801315,office
+LOC-0364,Beacon Residential 364,Duskmoor,Estovia,40.354226,-3.71956,residential
+LOC-0365,Cedar Hotel 365,Sarnath Quay,Farland,25.215942,55.306381,hotel
+LOC-0366,Cedar Hotel 366,Brightwater,Aldoria,41.884903,-87.657464,hotel
+LOC-0367,Beacon Hotel 367,Lumen City,Brevia,35.66095,139.754451,hotel
+LOC-0368,Canal Transit 368,Port Veltra,Castellan Isles,51.488838,3.64009,transit
+LOC-0369,Foundry Residential 369,Marisk,Dunmark,48.188275,16.351288,residential
+LOC-0370,Quarry Hotel 370,Oldhaven,Estovia,53.497877,9.913964,hotel
+LOC-0371,Mill Transit 371,Kestrel Bay,Farland,1.297862,103.792716,transit
+LOC-0372,Beacon Port 372,Duskmoor,Aldoria,40.389018,-3.662073,port
+LOC-0373,Mill Cafe 373,Sarnath Quay,Brevia,25.258423,55.219167,cafe
+LOC-0374,Quarry Hotel 374,Brightwater,Castellan Isles,41.944348,-87.670067,hotel
+LOC-0375,Canal Cafe 375,Lumen City,Dunmark,35.74205,139.677733,cafe
+LOC-0376,Quarry Atm 376,Port Veltra,Estovia,51.431832,3.583592,atm
+LOC-0377,Quarry Atm 377,Marisk,Farland,48.160294,16.373864,atm
+LOC-0378,Beacon Port 378,Oldhaven,Aldoria,53.592001,9.897762,port
+LOC-0379,Beacon Hotel 379,Kestrel Bay,Brevia,1.318263,103.797934,hotel
+LOC-0380,Lantern Retail 380,Duskmoor,Castellan Isles,40.436627,-3.641498,retail
+LOC-0381,Orchard Transit 381,Sarnath Quay,Dunmark,25.159013,55.21948,transit
+LOC-0382,Mill Port 382,Brightwater,Estovia,41.823955,-87.660544,port
+LOC-0383,Mill Hotel 383,Lumen City,Farland,35.614811,139.678443,hotel
+LOC-0384,Harbor Transit 384,Port Veltra,Aldoria,51.393907,3.6584,transit
+LOC-0385,Lantern Office 385,Marisk,Brevia,48.219021,16.410818,office
+LOC-0386,Foundry Residential 386,Oldhaven,Castellan Isles,53.5398,9.966549,residential
+LOC-0387,Canal Atm 387,Kestrel Bay,Dunmark,1.277974,103.873693,atm
+LOC-0388,Canal Transit 388,Duskmoor,Estovia,40.488419,-3.762316,transit
+LOC-0389,Harbor Transit 389,Sarnath Quay,Farland,25.201056,55.34039,transit
+LOC-0390,Quarry Cafe 390,Brightwater,Aldoria,41.86421,-87.634305,cafe
+LOC-0391,Quarry Atm 391,Lumen City,Brevia,35.64449,139.620269,atm
+LOC-0392,Foundry Atm 392,Port Veltra,Castellan Isles,51.412685,3.622646,atm
+LOC-0393,Quarry Retail 393,Marisk,Dunmark,48.233901,16.375859,retail
+LOC-0394,Beacon Office 394,Oldhaven,Estovia,53.556633,9.99519,office
+LOC-0395,Station Office 395,Kestrel Bay,Farland,1.359307,103.846905,office
+LOC-0396,Harbor Hotel 396,Duskmoor,Aldoria,40.357024,-3.660189,hotel
+LOC-0397,Harbor Residential 397,Sarnath Quay,Brevia,25.170226,55.204242,residential
+LOC-0398,Canal Cafe 398,Brightwater,Castellan Isles,41.853419,-87.657376,cafe
+LOC-0399,Lantern Residential 399,Lumen City,Dunmark,35.676166,139.623207,residential
+LOC-0400,Quarry Port 400,Port Veltra,Estovia,51.429384,3.640482,port
+LOC-0401,Orchard Cafe 401,Marisk,Farland,48.167311,16.443148,cafe
+LOC-0402,Quarry Cafe 402,Oldhaven,Aldoria,53.585071,10.006885,cafe
+LOC-0403,Quarry Hotel 403,Kestrel Bay,Brevia,1.358284,103.849453,hotel
+LOC-0404,Orchard Atm 404,Duskmoor,Castellan Isles,40.481162,-3.697221,atm
+LOC-0405,Canal Office 405,Sarnath Quay,Dunmark,25.139305,55.284768,office
+LOC-0406,Lantern Warehouse 406,Brightwater,Estovia,41.850273,-87.687283,warehouse
+LOC-0407,Station Cafe 407,Lumen City,Farland,35.652108,139.704792,cafe
+LOC-0408,Quarry Retail 408,Port Veltra,Aldoria,51.477353,3.578601,retail
+LOC-0409,Mill Retail 409,Marisk,Brevia,48.216555,16.390622,retail
+LOC-0410,Station Transit 410,Oldhaven,Castellan Isles,53.574675,9.936481,transit
+LOC-0411,Harbor Hotel 411,Kestrel Bay,Dunmark,1.355267,103.798509,hotel
+LOC-0412,Quarry Warehouse 412,Duskmoor,Estovia,40.366123,-3.738055,warehouse
+LOC-0413,Beacon Office 413,Sarnath Quay,Farland,25.183114,55.279693,office
+LOC-0414,Foundry Atm 414,Brightwater,Aldoria,41.944695,-87.648449,atm
+LOC-0415,Lantern Warehouse 415,Lumen City,Brevia,35.627776,139.670822,warehouse
+LOC-0416,Beacon Office 416,Port Veltra,Castellan Isles,51.413908,3.544281,office
+LOC-0417,Lantern Atm 417,Marisk,Dunmark,48.202558,16.45961,atm
+LOC-0418,Foundry Residential 418,Oldhaven,Estovia,53.589635,9.979411,residential
+LOC-0419,Cedar Hotel 419,Kestrel Bay,Farland,1.259092,103.910033,hotel
+LOC-0420,Station Hotel 420,Duskmoor,Aldoria,40.365605,-3.649142,hotel
+LOC-0421,Quarry Atm 421,Sarnath Quay,Brevia,25.257467,55.262088,atm
+LOC-0422,Canal Transit 422,Brightwater,Castellan Isles,41.904193,-87.599796,transit
+LOC-0423,Station Office 423,Lumen City,Dunmark,35.649782,139.661165,office
+LOC-0424,Cedar Atm 424,Port Veltra,Estovia,51.492335,3.601262,atm
+LOC-0425,Harbor Hotel 425,Marisk,Farland,48.2421,16.362052,hotel
+LOC-0426,Canal Hotel 426,Oldhaven,Aldoria,53.529949,9.960418,hotel
+LOC-0427,Lantern Atm 427,Kestrel Bay,Brevia,1.236634,103.905387,atm
+LOC-0428,Canal Hotel 428,Duskmoor,Castellan Isles,40.40532,-3.66873,hotel
+LOC-0429,Station Atm 429,Sarnath Quay,Dunmark,25.187142,55.256945,atm
+LOC-0430,Beacon Hotel 430,Brightwater,Estovia,41.948091,-87.609483,hotel
+LOC-0431,Foundry Transit 431,Lumen City,Farland,35.705962,139.667588,transit
+LOC-0432,Canal Cafe 432,Port Veltra,Aldoria,51.404157,3.667209,cafe
+LOC-0433,Canal Atm 433,Marisk,Brevia,48.259202,16.335915,atm
+LOC-0434,Cedar Warehouse 434,Oldhaven,Castellan Isles,53.499984,9.901662,warehouse
+LOC-0435,Mill Port 435,Kestrel Bay,Dunmark,1.267805,103.913554,port
+LOC-0436,Lantern Transit 436,Duskmoor,Estovia,40.384051,-3.680532,transit
+LOC-0437,Mill Transit 437,Sarnath Quay,Farland,25.14597,55.241578,transit
+LOC-0438,Station Office 438,Brightwater,Aldoria,41.880371,-87.677764,office
+LOC-0439,Foundry Warehouse 439,Lumen City,Brevia,35.70288,139.721803,warehouse
+LOC-0440,Harbor Atm 440,Port Veltra,Castellan Isles,51.383866,3.652437,atm
+LOC-0441,Cedar Port 441,Marisk,Dunmark,48.264655,16.439066,port
+LOC-0442,Beacon Retail 442,Oldhaven,Estovia,53.588481,9.937976,retail
+LOC-0443,Beacon Port 443,Kestrel Bay,Farland,1.346072,103.85657,port
+LOC-0444,Lantern Cafe 444,Duskmoor,Aldoria,40.383226,-3.655697,cafe
+LOC-0445,Beacon Office 445,Sarnath Quay,Brevia,25.193304,55.297188,office
+LOC-0446,Foundry Warehouse 446,Brightwater,Castellan Isles,41.867837,-87.635125,warehouse
+LOC-0447,Quarry Warehouse 447,Lumen City,Dunmark,35.628637,139.742106,warehouse
+LOC-0448,Canal Warehouse 448,Port Veltra,Estovia,51.518522,3.546777,warehouse
+LOC-0449,Mill Hotel 449,Marisk,Farland,48.208887,16.373927,hotel
+LOC-0450,Mill Port 450,Oldhaven,Aldoria,53.516482,9.913664,port
+LOC-0451,Cedar Cafe 451,Kestrel Bay,Brevia,1.225222,103.9142,cafe
+LOC-0452,Foundry Warehouse 452,Duskmoor,Castellan Isles,40.486693,-3.642009,warehouse
+LOC-0453,Beacon Office 453,Sarnath Quay,Dunmark,25.231874,55.225291,office
+LOC-0454,Beacon Port 454,Brightwater,Estovia,41.951491,-87.634783,port
+LOC-0455,Beacon Transit 455,Lumen City,Farland,35.611269,139.754178,transit
+LOC-0456,Harbor Warehouse 456,Port Veltra,Aldoria,51.51727,3.55894,warehouse
+LOC-0457,Lantern Hotel 457,Marisk,Brevia,48.135213,16.399264,hotel
+LOC-0458,Station Cafe 458,Oldhaven,Castellan Isles,53.555289,10.000043,cafe
+LOC-0459,Quarry Cafe 459,Kestrel Bay,Dunmark,1.345129,103.882794,cafe
+LOC-0460,Cedar Transit 460,Duskmoor,Estovia,40.354449,-3.764698,transit
+LOC-0461,Canal Cafe 461,Sarnath Quay,Farland,25.180184,55.239528,cafe
+LOC-0462,Station Atm 462,Brightwater,Aldoria,41.872844,-87.622813,atm
+LOC-0463,Canal Warehouse 463,Lumen City,Brevia,35.74848,139.674707,warehouse
+LOC-0464,Foundry Residential 464,Port Veltra,Castellan Isles,51.513272,3.636752,residential
+LOC-0465,Harbor Retail 465,Marisk,Dunmark,48.201315,16.400011,retail
+LOC-0466,Canal Hotel 466,Oldhaven,Estovia,53.497681,9.925934,hotel
+LOC-0467,Station Transit 467,Kestrel Bay,Farland,1.2838,103.865317,transit
+LOC-0468,Orchard Office 468,Duskmoor,Aldoria,40.395202,-3.683702,office
+LOC-0469,Foundry Port 469,Sarnath Quay,Brevia,25.270719,55.304496,port
+LOC-0470,Beacon Transit 470,Brightwater,Castellan Isles,41.856414,-87.582679,transit
+LOC-0471,Quarry Retail 471,Lumen City,Dunmark,35.710089,139.661141,retail
+LOC-0472,Foundry Cafe 472,Port Veltra,Estovia,51.425674,3.543727,cafe
+LOC-0473,Foundry Retail 473,Marisk,Farland,48.172278,16.45748,retail
+LOC-0474,Harbor Residential 474,Oldhaven,Aldoria,53.546337,10.017326,residential
+LOC-0475,Station Cafe 475,Kestrel Bay,Brevia,1.302039,103.802506,cafe
+LOC-0476,Cedar Atm 476,Duskmoor,Castellan Isles,40.466366,-3.737161,atm
+LOC-0477,Orchard Office 477,Sarnath Quay,Dunmark,25.130658,55.243145,office
+LOC-0478,Harbor Hotel 478,Brightwater,Estovia,41.907459,-87.642919,hotel
+LOC-0479,Quarry Transit 479,Lumen City,Farland,35.709661,139.692693,transit
+LOC-0480,Quarry Cafe 480,Port Veltra,Aldoria,51.521801,3.596882,cafe
+LOC-0481,Quarry Transit 481,Marisk,Brevia,48.265829,16.394186,transit
+LOC-0482,Foundry Port 482,Oldhaven,Castellan Isles,53.55667,9.97535,port
+LOC-0483,Canal Port 483,Kestrel Bay,Dunmark,1.28772,103.915923,port
+LOC-0484,Lantern Port 484,Duskmoor,Estovia,40.390955,-3.636362,port
+LOC-0485,Quarry Hotel 485,Sarnath Quay,Farland,25.229535,55.297422,hotel
+LOC-0486,Lantern Port 486,Brightwater,Aldoria,41.877089,-87.621281,port
+LOC-0487,Orchard Cafe 487,Lumen City,Brevia,35.625495,139.715459,cafe
+LOC-0488,Lantern Office 488,Port Veltra,Castellan Isles,51.495892,3.665529,office
+LOC-0489,Quarry Atm 489,Marisk,Dunmark,48.133992,16.465631,atm
+LOC-0490,Cedar Hotel 490,Oldhaven,Estovia,53.611119,9.972482,hotel
+LOC-0491,Lantern Transit 491,Kestrel Bay,Farland,1.247055,103.855561,transit
+LOC-0492,Cedar Residential 492,Duskmoor,Aldoria,40.367715,-3.683326,residential
+LOC-0493,Cedar Residential 493,Sarnath Quay,Brevia,25.135245,55.328405,residential
+LOC-0494,Mill Hotel 494,Brightwater,Castellan Isles,41.815494,-87.642497,hotel
+LOC-0495,Station Transit 495,Lumen City,Dunmark,35.706118,139.637743,transit
+LOC-0496,Beacon Hotel 496,Port Veltra,Estovia,51.436581,3.662707,hotel
+LOC-0497,Quarry Port 497,Marisk,Farland,48.221699,16.436888,port
+LOC-0498,Foundry Atm 498,Oldhaven,Aldoria,53.519069,9.886456,atm
+LOC-0499,Station Retail 499,Kestrel Bay,Brevia,1.251401,103.884405,retail

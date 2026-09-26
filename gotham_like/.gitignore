@@ -1,0 +1,8 @@
+.venv/
+node_modules/
+frontend/dist/
+data/uploads/
+*.pyc
+__pycache__/
+.pytest_cache/
+benchmark_results/*.tmp
