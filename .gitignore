@@ -97,3 +97,6 @@ __pypackages__/
 # Project-specific
 # ==================================================
 tool_called.txt
+# watermark-research outputs
+cmr-output/
+watermark-research/*.egg-info/

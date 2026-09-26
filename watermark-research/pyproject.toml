@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-mark-research"
+version = "0.1.0"
+description = "Zero-AI, deterministic research tool for measuring the robustness of statistical text watermarks to non-generative text transformations."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.7"]
+images = ["Pillow>=10"]
+c2pa = ["c2pa-python>=0.6"]
+test = ["pytest>=7"]
+all = ["matplotlib>=3.7", "Pillow>=10", "c2pa-python>=0.6", "pytest>=7"]
+
+[project.scripts]
+claude-mark-research = "claude_mark_research.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["claude_mark_research*"]
+
+[tool.setuptools.package-data]
+claude_mark_research = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
