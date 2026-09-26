@@ -161,6 +161,17 @@ def main() -> None:
     for k in order:
         print(f"{k + ':':26s}{'PASS' if results.get(k) else 'FAIL'}   ({details.get(k, '')})")
     print(f"{'Synthetic Data:':26s}{'PASS' if results['Synthetic Data'] else 'FAIL'}   ({details['Synthetic Data']})")
+    lines = ["# Verification", "", f"Latest run of `scripts/verify_all.py`: {time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())}.", "",
+             "```", "============================", "PLATFORM VERIFICATION", "============================", ""]
+    lines += [f"{k + ':':26s}{'PASS' if results.get(k) else 'FAIL'}" for k in order] + ["```", "", "| Area | Evidence |", "|---|---|"]
+    lines += [f"| {k} | {details.get(k, '')} |" for k in [*order, "Synthetic Data"]]
+    lines += ["", "Steps executed: synthetic data generation (counts + byte-for-byte determinism) · backend pytest "
+              "(unit, integration incl. migration upgrade/downgrade/parity, security, performance incl. a generated "
+              "50k-entity / 250k-edge graph) · frontend `tsc`, Vitest, production build · Chromium E2E against the live API · "
+              "quick graph + geospatial benchmark. Full-scale numbers: [BENCHMARKS.md](BENCHMARKS.md).", "",
+              "Known limitations, technical debt, performance bottlenecks, security risks and recommended next steps: "
+              "[LIMITATIONS.md](LIMITATIONS.md)."]
+    (ROOT / "docs" / "VERIFICATION.md").write_text("\n".join(lines) + "\n")
     sys.exit(0 if all(results.get(k) for k in order) else 1)
 
 

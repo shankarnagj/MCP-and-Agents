@@ -29,6 +29,7 @@ from app.models import (
     utcnow,
 )
 from app.ontology import Ontology
+from app.privacy.masking import mask_label
 from app.services.investigations import assertion_dict, item_dict
 from app.services.serialize import edge_row_dict, entity_dict
 from app.services.timeline import timeline
@@ -57,6 +58,12 @@ def build_report(db: Session, ontology: Ontology, inv: Investigation, role: str,
             rel_rows.append({"id": r.id, "source": r.source_id, "target": r.target_id, "relationship_type": r.type,
                              "timestamp": r.timestamp.isoformat() if r.timestamp else None, "confidence": r.confidence,
                              "epistemic_status": r.epistemic_status, "source_records": r.source_records, "provenance": r.provenance})
+    end_ids = {x for r in rel_rows for x in (r["source"], r["target"])}
+    ends = {e.id: e for e in db.scalars(select(Entity).where(Entity.id.in_(list(end_ids))))} if end_ids else {}
+    for r in rel_rows:
+        for side in ("source", "target"):
+            e = ends.get(r[side])
+            r[f"{side}_label"] = f"{e.type}: {mask_label(ontology, e.type, e.label, role)}" if e else r[side]
     tl = timeline(db, entity_ids=ent_ids, limit=200, bucket="day") if ent_ids else {"events": [], "total": 0, "histogram": {"series": []}}
     signals = db.scalars(select(Signal).where(Signal.entity_ids.overlap(ent_ids)).order_by(Signal.created_at.desc()).limit(100)).all() if ent_ids else []
     assertions = db.scalars(select(Assertion).where(Assertion.investigation_id == inv.id)).all()
@@ -137,7 +144,7 @@ def to_markdown(rep: dict[str, Any]) -> str:
     lines += ["## Entities", "", "| Type | Label | Confidence | Status | Sources |", "|---|---|---|---|---|"]
     lines += [f"| {e['type']} | {e['label']} | {e['confidence']:.2f} | {e['epistemic_status']} | {len(e['source_ids'])} |" for e in s["Entities"]["items"]]
     lines += ["", "## Relationships", "", "| Source | Type | Target | Time | Confidence | Status | Source records |", "|---|---|---|---|---|---|---|"]
-    lines += [f"| {r['source']} | {r['relationship_type']} | {r['target']} | {r['timestamp'] or ''} | {r['confidence']:.2f} | {r['epistemic_status']} | "
+    lines += [f"| {r['source_label']} | {r['relationship_type']} | {r['target_label']} | {r['timestamp'] or ''} | {r['confidence']:.2f} | {r['epistemic_status']} | "
               f"{', '.join((r['source_records'] or [])[:2])} |" for r in s["Relationships"]["items"][:200]]
     lines += ["", "## Timeline", "", f"Span: {s['Timeline']['span']}", ""]
     lines += [f"- {ev['timestamp']} — {ev['event_type']} (source: {ev['source']})" for ev in s["Timeline"]["events"][:50]]
@@ -197,7 +204,7 @@ def to_pdf(rep: dict[str, Any]) -> bytes:
                    [25 * mm, 70 * mm, 15 * mm, 35 * mm, 20 * mm])]
     flow += [Paragraph("Relationships", st["Heading2"]),
              table(["Source", "Type", "Target", "Time", "Conf.", "Source records"],
-                   [[r["source"], r["relationship_type"], r["target"], r["timestamp"] or "", f"{r['confidence']:.2f}",
+                   [[r["source_label"], r["relationship_type"], r["target_label"], r["timestamp"] or "", f"{r['confidence']:.2f}",
                      ", ".join((r["source_records"] or [])[:2])] for r in s["Relationships"]["items"][:150]],
                    [32 * mm, 24 * mm, 32 * mm, 30 * mm, 12 * mm, 50 * mm])]
     flow += [Paragraph("Timeline", st["Heading2"]),
